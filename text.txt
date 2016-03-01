@@ -1,0 +1,67 @@
+
+
+
+  <section class="subscribe-feature subscribe-feature-first" style="background-image: url(http://clients.stillbrandworks.com/mojeh/images/subscribe-header.jpg);">
+     <div class="story-caption subscribe-format subscribe-format-white">
+        <h2 class="subscribe-format-heading">Subscribe</h2>
+        <p class="subscribe-format-description">Exclusive content and 6 beautifully designed issues a year - MOJEH Magazine is a bi-monthly high fashion publication, based in Dubai.</p>
+     </div>
+  </section>
+
+
+  <section class="subscribe-abridged">
+    <p class="subscribe-abridged-details">
+  	<span class="subscribe-abridged-issues">6 ISSUES</span>
+  	<span class="subscribe-abridged-cost">$79.99</span> 
+  	<span class="subscribe-abridged-timeframe">Per Year</span><span class="subscribe-abridged-nopressure">Cancel anytime.</span>
+    </p>
+    <button class="button-border-black stripe_button" id="subscribe-abridged-button" data-amount="7999" data-name="Mojeh Magazine" data-description="Subscribe 6 issues 1 year" data-plan="women1yr">Subscribe</button>
+  </section>
+ 
+
+  <img class="subscribe-exclusivecontent" src="http://clients.stillbrandworks.com/mojeh/images/subscribe-issues.jpg" alt="Mojeh Subscription">
+
+
+  <div class="subscribe-format subscribe-format-white">
+    <h2 class="subscribe-format-heading">Exclusive Content</h2>
+    <p class="subscribe-format-description">MOJEH Magazine is a bi-monthly high fashion publication, based in Dubai, with a decadent showroom in the iconic Burj Khalifa.</p>
+  </div>
+
+
+  <section class="subscribe-detailed">
+    <div class="subscribe-detailed-men" style="background-image: url(<?php print $mojeh_issue_men->image; ?>)">
+      <span class="subscribe-detailed-issue">Men / N&deg;<?php print $mojeh_issue_men->number; ?></span>
+  	  <span class="subscribe-detailed-category">MOJEH<br>Men</span>
+  	  <span class="subscribe-detailed-cost">$79.99</span>
+  	  <span class="subscribe-detailed-timeframe">/ Year</span>
+  	  <button class="subscribe-detailed-button button-solid-black stripe_button" id="subscribe-men-button" data-amount="7999" data-name="Mojeh Magazine" data-description="Men Issue" data-plan="men1yr">Subscribe</button>
+    </div>
+
+    <div class="subscribe-detailed-women" style="background-image: url(<?php print $mojeh_issue_women->image; ?>)">
+  	  <span class="subscribe-detailed-issue">Women / N&deg;<?php print $mojeh_issue_women->number; ?></span>
+  	  <span class="subscribe-detailed-category">MOJEH<br>Women</span>
+  	  <span class="subscribe-detailed-cost">$79.99</span>
+  	  <span class="subscribe-detailed-timeframe">/ Year</span>
+  	  <button class="subscribe-detailed-button button-solid-black stripe_button" id="subscribe-women-button" data-amount="7999" data-name="Mojeh Magazine" data-description="Women Issue" data-plan="women1yr">Subscribe</button>
+    </div>
+
+    <div class="subscribe-detailed-menwomen">
+  	  <span class="subscribe-detailed-category subscribe-menwomen-category">MOJEH<br>Men & Women</span>
+  	  <span class="subscribe-detailed-cost">$149.99</span>
+  	  <span class="subscribe-detailed-timeframe">/ Year</span>
+  	  <button class="button-solid-black stripe_button" id="subscribe-menwomen-button" data-amount="14999" data-name="Mojeh Magazine" data-description="Men &amp; Women Issue" data-plan="menwomen1yr">Subscribe to Both</button>
+    </div>
+  </section>
+
+
+
+
+  <section class="subscribe-feature" style="background-image: url(http://clients.stillbrandworks.com/mojeh/images/subscribe-footer.jpg);">
+     <div class="story-caption subscribe-format subscribe-format-white subscribe-questions">
+       <h2 class="subscribe-format-heading">Questions?</h2>
+  	   <h3 class="subscribe-format-subheading">Get in Touch</h3>
+       <p class="subscribe-format-description">+971 (4) 454 2050</p>
+  	   <p><a class="subscribe-link-white" href="mailto:subs@mojeh.com">subs@mojeh.com</a></p>
+  	   <a href="/magazine/contacts" class="button-border-white subscribe-contactlist-button">Full Contact List</a>
+     </div>
+  </section>
