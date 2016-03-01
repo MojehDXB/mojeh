@@ -1,0 +1,15 @@
+diff --git a/conditional_fields.module b/conditional_fields.module
+index 27ea7ee..86dc48d 100644
+--- a/conditional_fields.module
++++ b/conditional_fields.module
+@@ -763,7 +763,9 @@ function conditional_fields_form_validate($form, &$form_state) {
+     // $form_state['values'][ ... $element['#parents'] ... ], while the
+     // documentation of hook_field_widget_form() states that field values are
+     // $form_state['values'][ ... $element['#field_parents'] ... ].
+-    drupal_array_set_nested_value($form_state['values'], $dependent['#field_parents'], $field_values_location);
++    // TODO: Figure out why this is making it so that certain forms can't save 
++    // their conditional values.
++    //drupal_array_set_nested_value($form_state['values'], $dependent['#field_parents'], $field_values_location);
+ 
+     if (!empty($field['errors'])) {
+       $untriggered_dependents_errors = array_merge($untriggered_dependents_errors, $field['errors']);

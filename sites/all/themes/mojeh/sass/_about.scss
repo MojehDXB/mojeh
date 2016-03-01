@@ -1,0 +1,416 @@
+// global and header
+// TODO why is this here?
+.node-type-page {
+  #nav {
+    padding-top: 40px;
+  }
+}
+
+.current-page {
+  color: #fff;
+  background-color: #000;
+}
+
+.magazine-title {
+  color: #fff;
+  font-family: $gotham-ssa; //todo should be gotham thin
+  font-size: 40px;
+  font-weight: 200;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.about-title {
+  @extend .magazine-title;
+  color: #000;
+}
+
+
+/////////////////////////////////////////////////////
+//=Magazine Page
+///////////////////////////////////////////////////// 
+%magazine-block {
+  float: left;
+  box-sizing: content-box;
+  width: 100%;
+  padding-bottom: 98px;
+	padding-right: 10px;
+	padding-left: 10px;
+	margin-right: -10px;
+	margin-left: -10px;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  background-color: #000;
+  color: #fff;
+  
+	@include susy-breakpoint($big, $big-layout){
+		padding-right: 2.7093596%;
+		padding-left: 2.7093596%;
+		margin-right: -2.578125%;
+		margin-left: -2.578125%;
+	}
+  
+  
+  .magazine-title  {
+    margin: 105px auto 40px;
+    color: #fff;
+  }
+  
+  p {
+    @include span(6);
+    @include pre(3);
+    @include post(3);
+    margin-bottom: 56px;
+  }
+    
+  a { text-decoration: underline; }
+}
+
+.magazine-intro {
+  @extend %magazine-block;
+  background-image: url('../img/about/magazine-intro-bg.jpg');
+}
+
+.magazine-contact {
+  @extend %magazine-block;
+  background-image: url('../img/about/magazine-contact-bg.jpg');
+}
+
+
+
+/////////////////////////////////////////////////////
+//=About Page
+/////////////////////////////////////////////////////  
+.about-page {
+  opacity: 0;
+  margin-top: 90px;
+  
+  .about-title {
+    @extend .magazine-title;
+    margin-bottom: 80px;
+    color: #000;
+    text-align: left;
+    
+    @include susy-breakpoint($big, $big-layout){
+      display: none;
+    }
+  }
+}
+
+.about-mojeh {
+  font-size: 20px;
+  font-family: $freight-text;
+  line-height: 2.1;
+  
+  img { display: none; }
+  
+  @include susy-breakpoint($big, $big-layout){
+    @include span(6);
+  }
+  
+  @include susy-breakpoint($bigger, $bigger-layout){
+    @include pre(1);
+    @include span(5);
+    
+    img {
+      display: block;
+      max-width: 210px;
+      margin-bottom: 98px;
+    }
+  }
+}
+
+.mojeh-masthead {
+  font-family: $gotham-ssa;
+  @include span(6);
+  margin-top: 50px;  
+    
+  @include susy-breakpoint($big, $big-layout){
+    @include pre(1);
+    @include span(5);
+    @include last;
+    margin-top: 0;
+  }
+  
+  @include susy-breakpoint($bigger, $bigger-layout){
+    @include pre(1);
+    @include span(4);
+  }
+}
+
+.masthead-listing {
+  padding-top: 36px;
+  border-top: 1px solid $med-grey;
+  margin-bottom: 70px;
+  list-style: none;
+  
+  &:first-child { padding-top: 0; border-top: 0; }
+}
+
+.masthead-heading {
+  font-size: 24px;
+  margin-bottom: 44px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.mh-role {
+  margin-top: 40px; 
+  &:first-child { margin-top: 0; }
+  color: $med-grey;
+  font-size: 14px;
+}
+
+.mh-name {
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+
+
+/////////////////////////////////////////////////////
+//=FAQ Page
+///////////////////////////////////////////////////// 
+.field-name-body {
+  margin-top: 90px;
+  margin-bottom: 90px;
+    
+  .about-title {
+    margin-bottom: 80px;
+    text-align: left;
+  }
+}
+
+
+.standard-page {
+  
+  @include susy-breakpoint($big, $big-layout){
+    @include pre(1);
+    @include span(10);
+  }
+  
+  @include susy-breakpoint($big, $big-layout){
+    @include span(6);
+  }
+  
+} 
+
+.faq {
+  padding-top: 48px;
+  border-top: 1px solid $med-grey;
+  margin-bottom: 65px;
+  font-weight: 500;
+  
+  &:first-child {
+    border-top: 0;
+  }
+ 
+ .a {
+   color: $med-grey;
+ }
+}
+
+
+/////////////////////////////////////////////////////
+//=Media Kits Page
+///////////////////////////////////////////////////// 
+.media-page {
+  margin-top: 90px;
+  
+  .about-title {
+    margin: 0 auto 84px;
+  }
+}
+
+
+%media-kit {
+  @include span(10);
+  @include pre(1);
+  margin-bottom: 56px;
+  position: relative;
+  font-family: $gotham;
+  font-size: 14px;
+    
+  img { position: relative; }
+  
+  a {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background-color: rgba(0,0,0,0.5);
+    
+    &:hover { background-color: rgba(0,0,0,0.7); }
+  }
+  
+  span {
+    margin: 50px auto 0;
+    display: block;
+    width: 64.6938776%;
+    padding: 14px 5px;
+    border: 1px solid #fff;
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  
+  @include susy-breakpoint($big, $big-layout){
+    @include span(5);
+  }
+}
+
+
+
+
+.women-media-kit {
+  @extend %media-kit;
+}
+
+.men-media-kit {
+  @extend %media-kit;
+  
+  @include susy-breakpoint($big, $big-layout){
+    @include pre(0);
+  }
+}
+
+
+
+/////////////////////////////////////////////////////
+//=Contact Page
+///////////////////////////////////////////////////// 
+.page-magazine-contact {
+  font-family: $gotham-ssa;
+  font-size: 16px;
+  
+  #header {
+    margin-bottom: 0;
+  }
+}
+
+
+.dubai-cityscape {
+  display: block;
+  height: 400px;
+  box-sizing: content-box;
+  padding-right: 10px;
+  padding-left: 10px;
+  margin-left: -10px;
+  margin-right: -10px;
+  background-image: url('../img/about/cityscape.jpg');
+  background-size: cover;
+   
+  @include susy-breakpoint($big, $big-layout){
+    height: 728px;
+    padding-right: 2.5%;
+    padding-left: 2.5%;
+    margin-right: -2.5%;
+    margin-left: -2.5%;
+  }
+}
+
+
+.contact-info {
+  border-top: 1px solid $light-grey;
+  &:first-child { border-top: 0; } //TODO why aren't you working?
+  
+  a { 
+    color: #000;
+    text-decoration: underline;
+  }
+  
+  p {
+  }
+}
+
+.contact-title {
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-size: 0.9em;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+
+
+
+
+.office-contacts {
+  @include span(12);
+  padding: 20px gutter();
+  margin-top: -210px;
+  background-color: #fff;
+  
+    @include susy-breakpoint($big, $big-layout) {
+      @include span(10);
+      @include pre(1);
+      padding: 32px; 
+    }
+    
+    @include susy-breakpoint($bigger, $bigger-layout) {
+      @include span(7);
+    }
+    
+    .contact-title {
+      color: $med-grey;
+    }
+    
+    .contact-info {
+      padding-top: 28px;
+      margin-bottom: 30px;
+    }
+    
+    p {
+      font-weight: 400;
+    }
+}
+
+  .mojeh-publisher{
+    color: $med-grey;
+    margin-bottom: -5px;
+    font-weight: 300;
+  }
+  
+  .hs-media-group {
+    color: #000;
+    font-size: 24px;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    
+    @include susy-breakpoint($bigger, $bigger-layout) {
+      margin-bottom: 180px;
+    }
+    
+  }
+  
+  
+
+.department-contacts {
+  @include span(12);
+  margin-top: 42px;
+  
+  @include susy-breakpoint($big, $big-layout){
+    @include span(5);
+    @include pre(1);
+    margin-top: 70px;
+  }
+  
+  @include susy-breakpoint($bigger, $bigger-layout) {
+    @include span(last 3);
+    @include pre(1);
+    margin-right: 0;
+  }
+  
+  .contact-title { color: #000; }
+  .contact-info {
+    padding-top: 35px;
+    padding-right: 10px;
+    margin-bottom: 35px;
+  }
+  
+  p { font-weight: 400; }
+}
+  
+

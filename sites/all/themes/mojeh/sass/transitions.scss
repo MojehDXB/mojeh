@@ -1,0 +1,938 @@
+@import "_config";
+@import "_variables";
+
+//body {
+//	@include transition-property(transform);
+//	@include transition-duration(.4s);
+//	@include transition-timing-function(ease-in-out);
+//	-webkit-perspective: 1000;
+//}
+
+/////////////////////////////////////////////////////
+//=Landing Page Transition-In
+///////////////////////////////////////////////////// 
+
+// Disabling for performance optimization
+//.landing-translate-in {
+//
+//  .category-title,
+//  .category-arrow-container {
+//    @include transform(translate3d(0,40px,0));
+//    @include animation(translate-in, 0.3s, ease);
+//  }
+//
+//  .sub-categories {
+//    @include transform(translate3d(0,55px,0));
+//    @include animation(translate-in, 0.3s, ease);
+//  }
+//
+//
+//  #main{
+//    @include transform(translate3d(0,85px,0));
+//    @include animation(translate-in, 0.3s, ease);
+//  }
+//}
+
+
+//.lander-loaded {
+//  #lander-header,
+//  .category-arrow-container,
+//  #main,
+//  .category-title {
+//    opacity: 1;
+//  }
+//}
+//
+//
+//.left-translate-in,
+//.right-translate-in, {
+//  #lander-header,
+//  .category-arrow-container,
+//  .category-title,
+//  #main,
+//  #nav { opacity: 1; }
+//}
+
+
+.left-translate-out,
+.right-translate-out {
+  .sub-categories,
+  .category-title { opacity: 0;}
+}
+
+
+
+/////////////////////////////////////////////////////
+//=Landing Page Arrows Transitions
+///////////////////////////////////////////////////// 
+.side-translate-base {
+	@include transition-property(opacity, transform);
+}
+$translate_out_time : .3s;
+
+
+//
+// Translating OUT a Section after an arrow click
+//
+
+.left-translate-out { 
+	#nav,
+	#lander-header {
+		opacity: 0;
+	}
+  .category-title,
+  .sub-categories,
+  #main {
+	  opacity:1;
+  	@extend .side-translate-base;
+  }
+  
+  .category-title,
+  .sub-categories {
+     	@include animation(translate-left, $translate_out_time, ease-in, $direction: reverse); 
+  }
+  
+  #main {
+    @include animation(translate-left, $translate_out_time, ease-in, $direction: reverse); 
+  }
+}
+
+
+
+.right-translate-out{
+	#nav,
+	#lander-header {
+		opacity: 0;
+	}
+  .category-title,
+  .sub-categories,
+  #main {
+  	@extend .side-translate-base;
+  }
+  .category-title,
+  .sub-categories {
+  	@include animation(translate-right, $translate_out_time, ease-in, $direction: reverse);
+  }
+  #main {
+    @include animation(translate-right, $translate_out_time, ease-in, $direction: reverse);
+  }
+} 
+
+//
+// Translating IN a Section after an arrow click
+//
+.left-translate-in {
+  .category-title,
+  .sub-categories {
+	  @extend .side-translate-base;
+	  @include animation(translate-left, 0.3s, ease-out);
+  }
+
+  #main {
+    @extend .side-translate-base;
+  	@include animation(translate-left, 0.3s, ease-out);
+  }
+}
+
+.right-translate-in {
+  .category-title,
+  .sub-categories {
+	  @extend .side-translate-base;
+	  @include animation(translate-right, 0.3s, ease-out);
+  }
+
+  #main {
+	  @extend .side-translate-base;
+    @include animation(translate-right, 0.3s, ease-out);
+  }
+}
+
+
+
+//
+// Translate Out DOWN
+//
+.translate-out-down {
+	#lander-header,
+	#nav,
+	#main {
+		opacity:0;
+	}
+  
+  #main {
+  	@extend .side-translate-base;
+  	@include animation(translate-out-down, 0.3s, ease-out);    
+  }
+}
+
+
+
+	
+//
+// Translate In UP
+//
+//.main-up-translate-in #main {
+//	@extend .side-translate-base;
+//  @include animation(translate-in-up, 0.3s, ease-out);
+//}
+//
+//
+//.main-up-translate-in {
+//	#lander-header,
+//	#nav {
+//		opacity:1;
+//	}
+//}
+//
+//.main-up-translate-in .sub-categories .active {
+//	@include animation(fade-bg-to-full-opacity, 0.5s, ease);
+//}
+
+@-webkit-keyframes fade-bg-to-full-opacity { 
+	from {  background-color: rgba(0,0,0,0.03); }
+	to {  background-color: rgba(0,0,0,1); color: #fff;}}
+@-moz-keyframes fade-bg-to-full-opacity { 
+	from {  background-color: rgba(0,0,0,0.03); }
+	to {  background-color: rgba(0,0,0,1); color: #fff;}}
+@keyframes fade-bg-to-full-opacity { 
+	from {  background-color: rgba(0,0,0,0.03); }
+	to {  background-color: rgba(0,0,0,1); color: #fff;}}
+
+
+
+
+
+/////////////////////////////////////////////////////
+//= Translating from Homepage to Landing Page
+///////////////////////////////////////////////////// 
+$header_transition_timing: 0.5s;
+$half_header_transition_timing: 0.25s;
+.translating-out-homepage-to-landing-page {
+	
+  .homepage-nav {
+	  opacity: 0;
+	  overflow: hidden;
+  }
+
+  #lander-header {
+	  opacity: 0;
+  }
+  h1 {
+	  @include transition-property(all);
+	  @include transition-duration($header_transition_timing);
+	  width: 100%;
+	  width: 131px;
+	  height: 28px;
+	  margin: 0px auto 40px;
+
+  }
+
+  #nav, #main {
+	  @include animation(fade-out-1-to-0, $half_header_transition_timing, ease-out);
+  }
+
+}
+
+.from-home-translate-in{
+	#lander-header {
+		opacity: 1;
+	}
+  #nav {
+	  @include animation(fade-in-0-to-1, $half_header_transition_timing, ease-out);
+  }
+ #main {
+   @include animation(fade-in-0-to-1-long, $half_header_transition_timing, ease-out);
+  }
+}
+
+//.direct-translate-in {
+//  #lander-header,
+//  #nav {
+//	  @include animation(fade-in-0-to-1, $header_transition_timing, ease-out);
+//  }
+//  #main {
+//    @include animation(fade-in-0-to-1-long, $half_header_transition_timing, ease-out);
+//  }
+//}
+
+
+/////////////////////////////////////////////////////
+//= Translating from Homepage to Landing Page
+///////////////////////////////////////////////////// 
+
+
+.translating-out-landing-page-to-homepage {
+	#lander-header {
+		opacity: 0;
+	}
+	h1 {
+	
+		width: 50%;
+		@include transition-property(all);
+		@include transition-duration($header_transition_timing);
+		@include susy-breakpoint($big, $big-layout) {
+			opacity: 1;
+			margin: 55px auto 75px;
+			width: 500px;
+			height: 100px;
+		}
+		
+		@include susy-breakpoint($bigger, $bigger-layout) {
+			width: 100%;
+			margin: 31px auto 75px;
+			width: 700px;
+			height: 130px;
+		}
+	}
+	
+	#nav,
+  #main {
+		@include animation(fade-out-1-to-0, $half_header_transition_timing, ease-out);
+	}
+}
+
+.home-from-landing-page-translate-in {
+	#lander-header {
+		opacity: 1;
+	}
+	#nav {
+		 @include animation(fade-in-0-to-1, $half_header_transition_timing, ease-out);
+	}
+	#main {
+ 	   @include animation(fade-in-0-to-1-long, $half_header_transition_timing, ease-out);
+	}
+}
+
+@-webkit-keyframes fade-in-0-to-1 {
+  from {  opacity: 0; @include transform(translate3d(0,25px,0)); }
+  to {  opacity: 1; @include transform(translate3d(0,0px,0));}
+}
+@-moz-keyframes fade-in-0-to-1 { 
+	from {  opacity: 0; @include transform(translate3d(0,25px,0)); }
+	to {  opacity: 1; @include transform(translate3d(0,0px,0));}
+}
+@keyframes fade-in-0-to-1 {
+  from {  opacity: 0; @include transform(translate3d(0,25px,0)); }
+  to {  opacity: 1; @include transform(translate3d(0,0px,0));}
+}
+
+
+
+@-webkit-keyframes fade-in-0-to-1-long { 
+  from {  opacity: 0; @include transform(translate3d(0,50px,0)); }
+  to {  opacity: 1; @include transform(translate3d(0,0px,0));}
+}
+@-moz-keyframes fade-in-0-to-1-long { 
+  from {  opacity: 0; @include transform(translate3d(0,50px,0)); }
+  to {  opacity: 1; @include transform(translate3d(0,0px,0));}
+}
+@keyframes fade-in-0-to-1-long { 
+  from {  opacity: 0; @include transform(translate3d(0,50px,0)); }
+  to {  opacity: 1; @include transform(translate3d(0,0px,0));}
+}
+
+@-webkit-keyframes fade-out-1-to-0 { 
+	from {  opacity: 1; }
+	to {  opacity: 0; }
+}
+@-moz-keyframes fade-out-1-to-0 { 
+	from {  opacity: 1; }
+	to {  opacity: 0; }
+}
+@keyframes fade-out-1-to-0 { 
+	from {  opacity: 1; }
+	to {  opacity: 0; }
+}
+
+
+/////////////////////////////////////////////////////
+//=Feed Transition-Out
+///////////////////////////////////////////////////// 
+.feed-transition {
+	#header,
+	.latest-title,
+	.daily-ribbon,
+	#latest-scroller,
+	.js-story:not(.translate-out){
+		opacity: 0;
+		@include transition-property(opacity, transform);
+		@include transition-duration(0.3s);
+		@include transition-timing-function(ease-in); 
+    @include transform(translate3d(0,-25px,0));
+	}
+
+	.js-story:hover {
+		background-color: inherit;
+	}
+}  
+
+
+.center {
+  float: left;
+  background: #fff;
+  //position: fixed;
+  z-index: 10;
+  @include transition-property(transform);
+  @include transition-duration(0.5s);
+  @include transition-timing-function(ease);
+  -webkit-transform-origin: center center;
+  -moz-transform-origin: center center;
+  transform-origin: center center;
+  
+  @include animation(background-colour-switch,0.5s,ease);
+}
+
+@-webkit-keyframes background-colour-switch { to { background-color: #f1f1f1; }}
+@-moz-keyframes background-colour-switch { to { background-color: #f1f1f1; }}
+@keyframes background-colour-switch { to { background-color: #f1f1f1; }}
+
+
+.translate-out {
+-webkit-animation: translate-out 0.3s ease-in forwards;
+-moz-animation: translate-out 0.3s ease-in forwards;
+animation: translate-out 0.3s ease-in forwards; 
+}
+
+
+
+
+/////////////////////////////////////////////////////
+//=Next Story Transition
+///////////////////////////////////////////////////// 
+.story-transition-next {  
+	#main,
+  #header {
+    opacity: 0;
+    @include transition-property(opacity, transform);
+    @include transition-duration(0.25s, 0.3s);
+    @include transition-timing-function(ease-out);
+	}
+}  
+
+.footer-out {
+	@include transition-property(transform);
+	@include transition-duration(0.3s);
+	@include transition-timing-function(ease-in);
+}
+
+
+
+
+
+/////////////////////////////////////////////////////
+//=Story Transition-In
+///////////////////////////////////////////////////// 
+// Base translate-in for node header for all stories bar Features
+/* Article, Gallery, Daily, Video Translate-In */
+.story-translate-in {
+  
+  #header{
+  	@include animation(translate-in, 0.3s, ease-out);
+  }
+  
+	.node-title,
+  .daily-title {
+		@include transform(translate3d(0,40px,0));
+		@include animation(translate-in, 0.3s, ease-out);
+	}
+  
+  .byline {
+  	@include transform(translate3d(0,55px,0));
+  	@include animation(translate-in-to-0196, 0.3s, ease-out);
+  }
+  
+  .daily-calendar {
+  	@include transform(translate3d(0,55px,0));
+  	@include animation(translate-in, 0.3s, ease-out);
+  }
+
+	.commitment,
+	.overlay-commitment,
+	#share-reveal-hide-button {
+		@include transform(translate3d(0,70px,0));
+		@include animation(translate-in-to-0196, 0.3s, ease-out);
+	}
+
+  #editorial-body,
+  .daily-node-image {
+    @include transform(translate3d(0,85px,0));	
+    @include animation(translate-in, 0.4s, ease-out);
+  }
+  
+// Purely for the opacity fade in
+  #gallery-slider-overlay {
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    @include background-image(linear-gradient(
+      left, 
+      rgba(50,50,50,0.8) 0%, 
+      rgba(50,50,50,1) 20%, 
+      rgba(50,50,50,1) 100%)
+    );
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00323232', endColorstr='#323232',GradientType=1 );
+    @include animation(gallery-slide-overlay, 0.5s, ease);
+  } 
+
+	#footer {
+    // TODO @ilia, this is the reason why there is padding below the footer. one thing we can do to solve this is set up an animation that 
+    // has an ending state of 0,0,0 and a starting state of 0,25px,0. Let's talk on Wednesday
+//    opacity: 0;
+//    @include transform(translate3d(0,25px,0));
+//    @include animation(translate-in, 0.5s, cubic-bezier(0.165, 0.84, 0.44, 1));
+//    @include animation-delay(0.7s);
+
+		.next-up {
+			opacity: 0;
+			@include transform(translate3d(0,25px,0));
+			@include animation(translate-in-to-05, 0.5s, ease-out);
+			@include animation-delay(1s);  
+		} 
+		.footer-bottom {
+			opacity: 0;
+			@include transform(translate3d(0,25px,0));
+			@include animation(translate-in, 0.5s, ease-out);
+			@include animation-delay(1.2s);  
+		}
+	}
+} // end story-translate-in
+
+
+
+
+.feature-translate-in {
+  @extend .story-translate-in;
+  
+  #cover {
+	  opacity: 1;
+  }
+
+    #cover .overlay {
+      @include animation(feature-overlay-fade-in, 3s, ease);
+      @include animation-delay(.3s);
+    } 
+            
+    #feature-header {
+      @include animation(translate-in, 0.5s, ease);
+      @include animation-delay(.3s);
+    } 
+    
+    #cover-scroller {
+      @include animation(opacity-in, 3.5s, ease);
+      @include animation-delay(.3s);
+    }
+
+    .feature-story-commitment, 
+    .feature-share-buttons {
+          @include animation(translate-in, 0.5s, ease);
+          @include animation-delay(.7s);
+    }  
+} // end feature-translate-in
+
+
+.feature-from-feed-translate-in {
+	@extend .story-translate-in;
+	#cover {
+		opacity: 1;
+	}
+  #cover .overlay {
+    opacity: 0.3;
+  }
+	
+	#feature-header {
+		@include animation(translate-in, 0.5s, ease);
+		@include animation-delay(.3s);
+	} 
+	
+	#cover-scroller {
+		@include animation(opacity-in, 3.5s, ease);
+		@include animation-delay(.3s);
+	} 
+
+	.feature-story-commitment, 
+  .feature-share-buttons {
+		@include susy-breakpoint($big, $big-layout) {
+				@include animation(translate-in, 0.5s, ease);
+				@include animation-delay(.7s);
+		} 
+	}   
+} // end feature-from-feed-translate-in
+
+
+.feature-utilities.slide-up {
+	-ms-transform: translateY(-100%); // IE 9 
+	-webkit-transform: translateY(-100%); // Chrome, Safari, Opera 
+	transform: translateY(-100%);
+}
+
+
+
+
+
+
+.feature-share-buttons {
+	display: block;
+	margin-bottom: 47px;
+
+	@include opacity(0);
+	@include transform(translate3d(0, 25px, 0));
+	
+	@include susy-breakpoint($big, $big-layout) {
+		margin-bottom: 22px;
+		float: right;  
+		
+		text-align: right;
+	} 
+	
+	@include susy-breakpoint($bigger, $bigger-layout) {
+		@include post(1); 
+	}
+	
+    
+	.share-button {
+		opacity: 1;
+		cursor: pointer;
+		height: 23px;
+		border: 0;
+		padding-right: 20px;
+		&:last-child{
+			padding-right:0;
+		};
+		
+		a img {
+			padding-top:0;
+		}
+	}
+    
+	.share-button-a {
+		display: block;
+	}
+    
+	.share-image,
+	.share-more-image {
+		//      padding: 0 13px;
+	}
+
+	.twitter .share-image {
+		padding-right: 0;
+	}
+}
+
+
+.feature-social {
+	display: none;
+
+    
+	.share-button {
+		opacity: 1;
+	}
+
+	.item {
+		cursor: pointer;
+		display: inline-block;
+		vertical-align: middle;
+		margin-right: 20px;
+			
+		.share-button-f {
+			cursor: pointer;
+		}
+      
+		&:last-child{
+			margin-right: 0px;
+		}
+	}
+			
+
+
+	.ellipsis {
+		width: 22px;
+		height: 4px;
+	}
+} 
+
+
+
+
+
+
+/* Feature Translate-OUT */
+
+//// 'pushes' elements above feature up out of the way
+//#site-wrapper.vertical-push {
+//  @include transition-property(all);
+//  @include transition-duration(.5s);
+//  @include transition-timing-function(ease);
+//}
+//
+//// animates the growing of the feature on landing page
+//.js-feature.clicked {
+//  @include transition-property(all);
+//  @include transition-duration(.5s);
+//  @include transition-timing-function(ease);
+//}
+//
+//// fades out the story copy on the landing page
+//.story-fade-out {
+//  @include transition-property(all);
+//  @include transition-duration(.7s);
+//  @include transition-timing-function(ease);
+//  @include opacity(0);
+//}
+
+
+/////////////////////////////////////////////////////
+//=Magazine/Subscrive Transition-In
+///////////////////////////////////////////////////// 
+.section-subscribe {
+  #header{
+  	@include animation(translate-in, 0.3s, ease-out);
+  }
+  
+  .subscribe-feature-first {
+  	@include transform(translate3d(0,40px,0));
+  	@include animation(translate-in, 0.3s, ease-out);
+  }
+  
+  .subscribe-format-heading {
+  	@include transform(translate3d(0,55px,0));
+  	@include animation(translate-in, 0.3s, ease-out);
+  }
+  
+  .subscribe-format-description {
+  	@include transform(translate3d(0,70px,0));
+  	@include animation(translate-in, 0.3s, ease-out);
+  }
+  
+  .subscribe-abridged {
+    @include transform(translate3d(0,85px,0));	
+    @include animation(translate-in, 0.4s, ease-out);
+  }
+}
+
+
+
+.section-magazine {
+  #header{
+  	@include animation(translate-in, 0.3s, ease-out);
+  }
+  
+  .about-navigation .sub-categories{
+  	@include transform(translate3d(0,40px,0));
+  	@include animation(translate-in, 0.3s, ease-out);
+  }
+  
+  .about-page {
+    @include transform(translate3d(0,85px,0));	
+    @include animation(translate-in, 0.4s, ease-out);
+  }
+}
+
+
+
+
+
+/////////////////////////////////////////////////////
+//=Slider Transition-In
+///////////////////////////////////////////////////// 
+.slide-slide {
+	-webkit-animation: slide-slide 0.3s ease forwards;
+	-moz-animation: slide-slide 0.3s ease forwards;
+	animation: slide-slide 0.3s ease forwards;
+}
+
+
+/////////////////////////////////////////////////////
+//=Breadcrumb Transitions
+/////////////////////////////////////////////////////
+#drawer-breadcrumb {
+  -webkit-backface-visibility: hidden;    
+  backface-visibility: hidden;
+	@include transform(rotate(270deg));
+	@include transition-property(opacity, bottom);
+	@include transition-duration(0.5s, 0.5s);
+	@include transition-timing-function(ease,ease);
+	opacity: 0;
+	display: block;
+	font-size: 15px;
+	position: absolute;
+	bottom: -15px;
+	text-transform: uppercase;
+	-webkit-transform-origin: left;
+	-moz-transform-origin: left;
+	-ms-transform-origin: left;
+	-o-transform-origin: left;
+	transform-origin: left;
+	
+	&.showing {
+		opacity: 1;
+		bottom:15px;
+		
+		&.bottom-move-out {
+			bottom: 45px;
+			opacity: 0;
+		}
+	}
+}
+
+#bread-cat,
+#bread-subcat {
+	a {
+		color: #666;
+		font-weight: 400;
+		-moz-osx-font-smoothing: grayscale;
+		-webkit-font-smoothing: antialiased;
+		padding-right: 20px;
+		margin-right: 20px;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		border-right: 1px solid #333;
+
+		&:hover {
+			color:white;
+		}
+	}
+}
+
+
+
+
+/////////////////////////////////////////////////////
+//=Animation Keyframes
+/////////////////////////////////////////////////////
+
+// Page Load/Unload Animations
+
+//!feature-overlay-fade-in
+// Used by #cover .overlay
+@-webkit-keyframes feature-overlay-fade-in { to {  opacity: 0.3; background: #000; }}
+@-moz-keyframes feature-overlay-fade-in { to {  opacity: 0.3; background: #000; }}
+@keyframes feature-overlay-fade-in { to {  opacity: 0.3; background: #000; }}
+
+//!opacity-in
+// Used by .feature-feed-translate-in,
+@-webkit-keyframes opacity-in { to { opacity: 1; }}
+@-moz-keyframes opacity-in { to { opacity: 1; }}
+@keyframes opacity-in { to { opacity: 1; }}
+
+
+//!translate-in-to-0196
+// Used by
+// .byline
+// .commitment,
+// .overlay-commitment
+@-webkit-keyframes translate-in-to-0196 { to {  opacity: 0.196; @include transform(translate3d(0,0,0)); }}
+@-moz-keyframes translate-in-to-0196 { to {  opacity: 0.196; @include transform(translate3d(0,0,0)); }}
+@keyframes translate-in-to-0196 { to {  opacity: 0.196; @include transform(translate3d(0,0,0)); }}
+
+//Mobile version–used so that the content shows up on Android. Fuck you, Android.
+@-webkit-keyframes translate-in-to-05 { to {  opacity: 0.5; @include transform(translate3d(0,0,0)); }}
+@-moz-keyframes translate-in-to-05 { to {  opacity: 0.5; @include transform(translate3d(0,0,0)); }}
+@keyframes translate-in-to-05 { to {  opacity: 0.5; @include transform(translate3d(0,0,0)); }}
+
+//!translate-in
+// Used by
+// .feature-feed-translate-in
+// .page-node #header
+// .page-node #editorial-body
+// .node-title
+// .share-buttons
+@-webkit-keyframes translate-in { to {  opacity: 1; @include transform(translate3d(0,0,0)); }}
+@-moz-keyframes translate-in { to {  opacity: 1; @include transform(translate3d(0,0,0)); }}
+@keyframes translate-in { to {  opacity: 1; @include transform(translate3d(0,0,0)); }}
+
+
+//!translate-in-up
+// Used by #main
+@-webkit-keyframes translate-in-up { 
+	from {  opacity: 0; @include transform(transform3d(0,25px,0)); }
+	to {  opacity: 1; @include transform(translate3d(0,0,0)); }}
+@-moz-keyframes translate-in-up { 
+	from {  opacity: 0; @include transform(translate3d(0,25px,0)); }
+	to {  opacity: 1; @include transform(translate3d(0,0,0)); }}
+@keyframes translate-in-up { 
+	from {  opacity: 0; @include transform(translate3d(0,25px,0)); }
+	to {  opacity: 1; @include transform(translate3d(0,0,0)); }} 
+
+
+//!translate-out
+// Used by
+@-webkit-keyframes translate-out { to { opacity: 0; @include transform(translate3d(0,-50px,0) /*scale(1.05)*/); }}
+@-moz-keyframes translate-out { to { opacity: 0; @include transform(translate3d(0,-50px,0) /*scale(1.05)*/);}}
+@keyframes translate-out { to { opacity: 0; @include transform(translate3d(0,-50px,0) /*scale(1.05)*/);}}
+
+
+//!translate-out-down
+// Used by #main
+@-webkit-keyframes translate-out-down { 
+	from {  opacity: 1; @include transform(transform3d(0,0,0)); }
+	to {  opacity: 0; @include transform(transform3d(0,25px,0)); }}
+@-moz-keyframes translate-out-down { 
+	from {  opacity: 1; @include transform(transform3d(0,0,0)); }
+	to {  opacity: 0; @include transform(transform3d(0,25px,0)); }}
+@keyframes translate-out-down { 
+	from {  opacity: 1; @include transform(transform3d(0,0,0)); }
+	to {  opacity: 0; @include transform(transform3d(0,25px,0)); }}
+
+
+
+
+
+
+//!translate-left
+// Used by
+// .left-translate-out
+// .left-translate-in
+@-webkit-keyframes translate-left { 
+	from {  opacity: 0; @include transform(translate3d(-25px,0,0));  }
+	to {  opacity: 1; @include transform(translate3d(0,0,0)); }}
+@-moz-keyframes translate-left { 
+	from {  opacity: 0; @include transform(translate3d(-25px,0,0)); }
+	to {  opacity:1; @include transform(translate3d(0,0,0)); }}
+@keyframes translate-left { 
+	from {  opacity: 0; @include transform(translate3d(-25px,0,0)); }
+	to {  opacity: 1; @include transform(translate3d(0,0,0)); }}			
+
+
+//!translate-right
+// Used by
+// .right-translate-out
+// .right-translate-in
+@-webkit-keyframes translate-right { 
+	from {  opacity: 0; @include transform(translate3d(25px,0,0)); }
+	to {  opacity: 1; @include transform(translate3d(0,0,0)); }
+}
+@-moz-keyframes translate-right { 
+	from {  opacity: 0; @include transform(translate3d(25px,0,0)); }
+	to {  opacity:1; @include transform(translate3d(0,0,0)); }
+}
+@keyframes translate-right { 
+	from {  opacity: 0; @include transform(translate3d(25px,0,0)); }
+	to {  opacity: 1; @include transform(translate3d(0,0,0)); }
+}			
+
+
+
+
+
+
+// Slider Animations
+
+//!slide-slide
+// Used by
+// .js-slider, 
+// .js-ribbon
+@-webkit-keyframes slide-slide { to {  opacity: 1; @include transform(translate3d(0,0,0)); }}
+@-moz-keyframes slide-slide { to {  opacity: 1; @include transform(translate3d(0,0,0)); }}
+@keyframes slide-slide { to {  opacity: 1; @include transform(translate3d(0,0,0)); }}
+
+
+//creats the gradient overlay while a gallery-page slider is loading
+// Applies to #gallery-slider
+@-webkit-keyframes gallery-slide-overlay { to { opacity: 0; z-index: -1; }}
+   @-moz-keyframes gallery-slide-overlay { to { opacity: 0; z-index: -1; }}
+        @keyframes gallery-slide-overlay { to { opacity: 0; z-index: -1; }}
+
+

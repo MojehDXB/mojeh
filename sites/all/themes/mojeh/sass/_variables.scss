@@ -1,0 +1,127 @@
+$big: 600px;
+$bigger: 1024px;
+$biggest: 1600px;
+
+$big-layout: (
+  container: auto,
+  columns: 12,
+  gutters: 30/72,
+  math: fluid,
+);
+
+$bigger-layout: (
+  container: auto,
+  columns: 12,
+  gutters: 30/72,
+  math: fluid,
+);
+
+$biggest-layout: (
+  container: auto,
+  columns: 12,
+  gutters: 30/72,
+  math: fluid,
+);
+
+$xspeed: .5s;
+
+$light-grey: #ededed;
+$mid-light-light-grey: #dadada;
+$mid-light-grey: #ccc;
+$med-grey: #999;
+$dark-grey: #666;
+
+
+
+$freight-display: "freight-display-pro", serif;
+$freight-text: "freight-text-pro", serif;
+$gotham: 'Gotham A', 'Gotham B', sans-serif;
+$gotham-ssa: 'Gotham SSm A', 'Gotham SSm B', sans-serif;
+$gotham-ssa-condensed: 'Gotham Cond A', 'Gotham Cond B', sans-serif;
+
+// Extended Classes
+.wrapper {
+  @include container;
+  margin: 0 10px;
+  
+  @include susy-breakpoint($big, $big-layout) { 
+    margin: 0 2.34375%;
+  }
+  
+  @include susy-breakpoint($bigger, $bigger-layout) { 
+    margin: 0 2.34375%;
+  }
+}
+
+
+// Clear Fix
+.contain {
+  display: inline-block;
+
+  &:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+	}
+}
+
+
+
+
+
+
+
+// =Mixins //
+
+// Retina Image Mixin
+// Usage:  background: url("logo.png") no-repeat;
+//         @include image-2x("logo2x.png", 100px, 25px);
+//
+@mixin image-2x($image, $width, $height) {
+  @media (min--moz-device-pixel-ratio: 1.3),
+         (-o-min-device-pixel-ratio: 2.6/2),
+         (-webkit-min-device-pixel-ratio: 1.3),
+         (min-device-pixel-ratio: 1.3),
+         (min-resolution: 1.3dppx) {
+    // on retina, use image that's scaled by 2
+    background-image: url($image);
+    background-size: $width $height;
+  }
+}
+
+
+
+
+
+@mixin small-promoted-story($total-width, $image-position, $image-width, $caption-position, $caption-width) {
+    
+    img,
+    .feed-video {
+      @include span($image-position $image-width of $total-width);
+	  height: auto;
+    }
+  
+    .story-caption {
+        @include span($caption-position $caption-width of $total-width);
+    }
+          
+}
+
+
+
+@mixin animation($animation-name, $duration, $easing, $direction: normal, $mode: forwards) {
+  // TODO changed "forwards" to "normal" does it f shit up?
+     -o-animation: $animation-name $duration $easing $direction $mode;  
+   -moz-animation: $animation-name $duration $easing $direction $mode;
+-webkit-animation: $animation-name $duration $easing $direction $mode;
+        animation: $animation-name $duration $easing $direction $mode;
+}
+
+@mixin animation-delay($delay) {
+       -o-animation-delay: $delay;
+     -moz-animation-delay: $delay;
+  -webkit-animation-delay: $delay;
+          animation-delay: $delay;
+}

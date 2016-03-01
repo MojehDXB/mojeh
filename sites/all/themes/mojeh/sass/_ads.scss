@@ -1,0 +1,194 @@
+
+.ad-ribbon .ad-ribbon-image {
+  height: 354px;
+  width: auto;
+}
+
+.ad-2col {
+  @include span(12 of 12);
+//  margin-top: 2.5em;
+  margin-bottom: 2.5em;
+  img { 
+	  width: 100%;
+	  height: 100%;
+  }
+
+  @include susy-breakpoint($big) {
+      width: 23.11558%;
+      float: none;
+      margin-left: auto;
+      margin-right: auto;
+  }
+  @include susy-breakpoint($bigger, $bigger-layout) {
+ 	   @include span(last 3 of 12);
+    	@include post(1)
+  }
+}
+
+
+@include susy-breakpoint($bigger, $bigger-layout) {
+  .ad-2col {
+  }
+}
+
+.ad-6col {
+	@include span(6 of 12);
+	float: left;
+    margin-top: 140px;
+    margin-bottom: 140px;
+	position: relative;
+}
+.ad-6col.ad-6col-second {
+	margin-right: 0;
+}
+
+.ad-9col {
+  width: 100%;
+  margin-top: 140px;
+  margin-bottom: 140px;
+  @include susy-breakpoint($big, $big-layout) {
+	  @include pre(2 of 12);
+	  @include span(8 of 12);
+	  @include post(2 of 12);
+  }
+}
+.ad-10col {
+  width: 100%;
+  margin-top: 140px;
+  margin-bottom: 140px;
+  position: relative;
+  @include susy-breakpoint($big, $big-layout) {
+    @include pre(1 of 12);
+    @include span(10 of 12);
+    @include post(1 of 12);
+  }
+}
+
+.js-ribbon.ad-slider {
+  @extend .slider;
+  @include span(12 of 12);	
+  background: white;
+  margin: 0 0 28px 0;
+  padding: 28px 0;
+//  overflow: hidden;
+}
+.ad-slider .slide-carousel {
+  overflow: hidden;
+}
+.ad-slides {
+	width: 3000px;
+	list-style: none;
+}
+.ad-slide {
+	width: auto;
+	float: left;
+}
+.ad-slide-img {
+	width: auto;
+	height: 100%;
+}
+
+.ad-slider {
+    margin-top: 140px;
+    margin-bottom: 140px;
+}
+.ad-slider .ad-slider-image {
+	height: 616px;
+}
+
+
+.ad-reveal {
+	text-transform: uppercase;
+	transition-property: none;
+	position: relative;
+	float: left;
+	width: 100%;
+	box-sizing: content-box;
+	margin-bottom: 90px;
+	margin-top: 66px;
+	color: #fff;
+	text-align: center;
+	background-color: #ccc;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: table;
+	padding-right: 2.7093596%;
+	padding-left: 2.7093596%;
+	margin-right: -2.578125%;
+	margin-left: -2.578125%;
+}
+.ad-fullbleed {
+	width: 105.1%;
+	margin-left: -2.578125%;
+	box-sizing: content-box;
+	display: table;
+	float: left;
+    margin-top: 140px;
+    margin-bottom: 140px;
+	position: relative;
+}
+
+.ad-fullbleed-scroll {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 400px;
+  display: block;
+  @include susy-breakpoint($big, $big-layout) {
+  background-attachment: fixed;
+  }
+}
+
+.ad-fullbleed-image {
+	width: 105.15625%;
+	margin-left: -2.578125%;
+}
+	
+.ad-reveal-details {
+	background: rgba(0,0,0,0.5);
+	padding-top: 112px;
+	padding-bottom: 112px;
+	padding-right: 2.7093596%;
+	padding-left: 2.7093596%;
+	margin-right: -2.578125%;
+	margin-left: -2.578125%;
+	
+	.ad-reveal-company {
+		font-family: $gotham-ssa;			
+		font-size: 28px;
+		line-height: 56px;
+		font-weight: 600;
+	}
+	.ad-reveal-campaign {
+		font-family: $gotham-ssa;
+		font-size: 16px;
+		font-weight: 600;
+	}
+}
+
+
+.ad-6col-logo,
+.ad-fullbleed-scroll-logo {
+  width: auto;
+  position: absolute;
+  height: 22px;
+  max-width: 75%;
+}
+.ad-6col-logo { bottom: 10px; }
+.ad-6col-logo-right { right: 10px; }
+.ad-6col-logo-left { left: 10px; }
+
+.ad-fullbleed-scroll-logo { bottom: 56px; }
+.ad-fullbleed-scroll-logo-right { right: 10.3125%; }
+.ad-fullbleed-scroll-logo-left { left: 10.3125%; }
+
+
+.drawer-ad {
+	float: left;
+	width: 100%;
+	border: 10px solid $dark-grey;
+	margin-bottom: 108px;
+  
+  img { height: auto;}
+} 

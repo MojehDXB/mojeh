@@ -1,0 +1,156 @@
+@import "_config";
+@import "_variables";
+
+html {
+}
+
+@include susy-breakpoint($bigger, $bigger-layout){ 
+  html {
+    // font-size: 150%;
+  }
+}  
+
+body {
+  margin: 0;
+  font-family: "freight-text-pro", serif;
+  font-weight: 500;
+  font-size: 21px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-shadow: rgba(0, 0, 0, .01) 0 0 1px;
+}
+
+
+// Font styles //
+// Headings
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+.header-logo {
+    opacity: 0.25;
+    background: url("../img/icons/logo-main.svg") no-repeat left center;
+    background-size: contain;
+    height: 28px;
+    display: inline-block;
+    float: left;
+	width: 130px;
+	  
+  @include susy-breakpoint($big, $big-layout){ 
+	  opacity:1;
+  }  
+  
+  a {
+	  display: inline-block;
+	  height: 100%;
+	  opacity: 0;
+	  width: 100%;
+  }
+}
+
+h2 {
+  // Use for all story titles
+  // See: .ribbon-story-title
+  //    .story-title
+  //	  .article-title
+  //	  .gallery-title
+  //    .issue-title
+  
+}
+
+h3 {
+  // Use for headings in sections/blocks/divs
+  // See: .ribbon-title
+  //      .issue-number
+  //      .ocial-media-title
+  
+  font-weight: 200;
+}
+
+h4 {
+  // Use for sub-titles, bylines, dates
+  // See: .site-nav-padding
+  // 	  .byline
+}
+
+
+h5 {
+  // Use for breadcrumbs
+  // See: .ribbon-breadcrumb
+}
+
+h6 {
+  font-size: 1em; /* 16px */
+  line-height: 1.75em;
+}
+
+
+// Paragraphs
+p { 
+  margin:0; 
+}
+
+
+a {
+  color: inherit;
+}
+
+#main p a {
+	text-decoration: underline;
+}
+
+.button {
+  padding: 16px 28px;
+  font-size: 14px;
+  background: #7f7f7f;
+  color: #fff;
+  font-family: $gotham-ssa;
+  text-decoration: none !important;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.overlay-button {
+  @extend .button;
+  border: 1px solid #3b3b3b;
+  background: transparent;
+  color: $light-grey;
+  
+  &:hover {
+    border-color: #fff;
+    color: #fff;
+  }
+}
+
+
+@-webkit-keyframes rotate {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+.testing-this-thing{
+//	background-color: green;
+//	background-image: url('../img/logos/loading-icon.svg');
+//	background-repeat: no-repeat;
+	
+    -webkit-animation-name: rotate; 
+    -webkit-animation-duration: 1.3s; 
+    -webkit-animation-iteration-count: infinite;
+    -webkit-transition-timing-function: linear;
+	
+	margin-top: 200px;
+}
+
+
+
+@import "_about";
+@import "_ads";
+@import "_custom";
+@import "_drawer";
+@import "_editorial-pages";
+@import "_features";
+@import "_landing-pages";
+@import "_menu";
+@import "_responsive";
+@import "_sliders";
+@import "_subscribe";

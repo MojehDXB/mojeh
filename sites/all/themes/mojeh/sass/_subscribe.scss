@@ -1,0 +1,573 @@
+.section-subscribe,
+.section-magazine {
+  #header {
+    padding-top: 10px;
+  }
+  .header-social,
+  .header-subscribe {
+    display: none;
+  }
+  
+  h1 {
+    margin-top:0;
+    margin-bottom: 0;
+  }
+}
+
+
+.subscribe-link-white {
+	border-bottom: 1px solid #fff;
+}
+
+
+.subscribe-header {
+	background-color: white;
+	padding: 20px 0;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 1;
+}
+@include susy-breakpoint($big, $big-layout) { 
+	.subscribe-header {
+		margin-left: 30px;
+	}
+}
+.subscribe-header-logo {
+	display: block;
+	height: 28px;
+	margin: 0 auto;
+	text-indent: -9999px;
+	width: 131px;
+	background: url('../img/logos/MOJEH-black.png');
+}
+
+
+.subscribe-format {
+  @include pre(2 of 12);
+  @include span(8 of 12);
+  @include post(2 of 12);
+  margin-top: 168px;
+  margin-bottom: 168px;	
+  text-align: center;
+}
+@include susy-breakpoint($big, $big-layout) { 
+	.subscribe-format {
+		@include pre(3 of 12);
+		@include span(6 of 12);
+		@include post(3 of 12);
+	}
+}
+
+	.subscribe-questions {
+		margin-top: 84px;
+		margin-bottom: 84px;
+	}
+	
+.subscribe-format-heading {
+  font-family: $gotham-ssa;
+  font-weight: 200;
+  font-size: 38px;
+  line-height: 56px;
+  margin-bottom: 28px;
+  text-transform: uppercase;
+  opacity: 0;
+}
+.subscribe-format-subheading {
+    font-family: $gotham-ssa;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 56px;
+	text-transform: uppercase;
+}
+.subscribe-format-description {
+  font-family: "freight-text-pro";
+  font-size: 22px;
+  line-height: 28px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  opacity: 0;
+}
+
+.subscribe-feature {
+	position: relative;
+	float: left;
+	width: 100%;
+	box-sizing: content-box;
+	height: 406px;
+	padding-right: 10px;
+	padding-left: 10px;
+	margin-bottom: 0px;
+	margin-top: 3px;
+	margin-left: -10px;
+	margin-right: -10px;
+	color: #fff;
+	text-align: center;
+	background-color: #ccc;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: table;
+	
+    padding-right: 2.7093596%;
+    padding-left: 2.7093596%;
+    margin-right: -2.578125%;
+    margin-left: -2.578125%;
+}
+
+.subscribe-feature-first {
+  // for translate-in
+  opacity: 0;
+}
+
+
+.subscribe-abridged {
+	@include pre(2 of 12);
+	@include span(8 of 12);
+	display: block;
+	clear: both;
+	margin-top: 168px;
+	margin-bottom: 168px;
+  opacity: 0;
+}
+@include susy-breakpoint($bigger, $bigger-layout) { 
+	.subscribe-abridged {
+		@include pre(3 of 12);
+		@include span(6 of 12);
+		@include post(3 of 12);
+	}
+}
+.subscribe-abridged-details {
+	text-align: center;
+}
+@include susy-breakpoint($bigger, $bigger-layout) { 
+	.subscribe-abridged-details {
+		@include span(8 of 12);
+		float: left;
+		text-align: left;
+	}
+}
+.subscribe-abridged-issues,
+.subscribe-abridged-cost {	
+    font-size: 40px;
+    line-height: 56px;
+	width: 100%;
+	display: block;
+}
+@include susy-breakpoint($biggest, $biggest-layout) { 
+	.subscribe-abridged-issues,
+	.subscribe-abridged-cost {	
+		float: left;
+		width: auto;
+		display: inline-block;	
+	}
+}	
+.subscribe-abridged-issues {
+	font-family: $gotham;	
+	font-weight: 100;
+	color: #666;
+	margin-right: 20px;
+}
+.subscribe-abridged-cost {
+	font-family: $gotham-ssa;	
+	font-weight: 300;
+}
+@include susy-breakpoint($bigger, $bigger-layout) { 
+	.subscribe-abridged-cost {
+		margin-right: 10px
+	}
+}
+.subscribe-abridged-timeframe,
+.subscribe-abridged-nopressure {
+	font-family: $gotham-ssa;
+	font-size: 14px;
+	line-height: 20px;
+	color: #999;
+	width: 100%;
+	display: block;
+}
+
+.subscribe-abridged-timeframe {
+	margin-top: 10px;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+
+#subscribe-abridged-button { 
+	margin: 28px auto 0;
+	display: block;
+  
+  @include susy-breakpoint($bigger, $bigger-layout) { 
+		margin: 0;
+		float: right;
+  }
+}
+
+
+
+.subscribe-exclusivecontent {
+	@include span(12 of 12);
+	margin-left: -2.51256%;
+	max-width: 1113px;
+  
+  @include susy-breakpoint($big, $big-layout) { 
+  	@include span(8 of 12);
+  }
+}
+
+.subscribe-detailed {
+	@include pre(1 of 12);
+	@include span(10 of 12);
+	@include post(1 of 12);
+	position: relative;
+	max-width: 1800px;
+  
+  @include susy-breakpoint($bigger, $bigger-layout) { 
+  		background: url("../img/subscribe/subscribe-detailed-divider.png") no-repeat center top;
+  }
+}
+
+.subscribe-detailed-men,
+.subscribe-detailed-women {
+	@include span(6 of 12);
+	min-height: 255px;
+	background-size: auto 252px ;
+  
+  @media screen and ( max-width: 560px ) {
+  	background-size: 100%;
+  }
+}
+
+
+
+.subscribe-detailed-men {
+	margin-right: 1.25%;
+	margin-left: 0;
+	background-image: url("../img/subscribe/subscribe-men.jpg");
+	background-position: left 112px;
+	background-repeat: no-repeat;
+	text-align: left;
+	position: relative;
+}
+
+.subscribe-detailed-women {
+	@include post(0);	
+	margin-left: 1.26%;	
+	background-image: url("../img/subscribe/subscribe-women.jpg");	
+	background-position: right 112px;	
+	background-repeat: no-repeat;	
+	text-align: right;
+}
+
+@include susy-breakpoint($bigger, $bigger-layout) { 
+  .subscribe-detailed-men {	
+    background-position: 90% 9px;
+	background-size: auto 252px ;
+  }
+  .subscribe-detailed-women {	
+	background-position: 10% 9px;
+  	background-size: auto 252px ;
+  }
+}
+
+.subscribe-detailed-menwomen {
+	background-image: url("../img/subscribe/subscribe-men.jpg"), url("../img/subscribe/subscribe-women.jpg");
+	background-position: 70% 80px, 30% 102px;
+	background-size: 180px;
+	background-repeat: no-repeat;
+	float: left;
+	margin-top: 112px;
+	margin-bottom: 112px;
+	text-align: center;
+	width: 100%;
+}
+@include susy-breakpoint($big, $big-layout) { 
+	.subscribe-detailed-menwomen {	
+		@include pre(4 of 12);
+		@include span(4 of 12);	
+		background-image: none;
+		min-width: auto;
+	}	
+}
+.subscribe-detailed-issue {
+	color: #ccc;
+	display: block;
+	font-family: $gotham-ssa;
+	font-size: 14px;
+	line-height: 28px;
+	text-transform: uppercase;
+}
+.subscribe-detailed-category {
+	display: block;	
+	font-family: $freight-display;
+	font-size: 30px;
+	line-height: 28px;
+	margin-bottom: 308px;
+}
+@include susy-breakpoint($big, $big-layout) {
+	.subscribe-menwomen-category { margin-bottom: 56px; }
+}
+@include susy-breakpoint($bigger, $bigger-layout) { 
+	.subscribe-detailed-category {
+	margin-bottom: 56px;		
+	}
+}
+.subscribe-detailed-cost {
+	display: inline-block;	
+	font-family: $gotham-ssa;
+	font-weight: 400;
+	font-size: 28px;
+}
+.subscribe-detailed-timeframe {
+	color: #999;
+	display: inline-block;		
+	font-family: $gotham-ssa;
+	font-weight: 400;
+	font-size: 10px;
+	text-transform: uppercase;	
+}
+@include susy-breakpoint($bigger, $bigger-layout) { 
+	.subscribe-detailed-timeframe {
+		font-size: 16px;
+	}
+}
+.subscribe-detailed-button { 
+	clear: both;
+	display: block;
+	margin-top: 14px;
+}
+#subscribe-women-button { 
+	position: absolute;
+	right: -.1%;
+}
+#subscribe-menwomen-button {
+	display: block;
+	margin: 28px auto 0;
+}
+
+
+.subscribe-contactlist-button {
+	margin-top: 84px;
+	display: inline-block;
+}
+
+.button-border-black,
+.button-border-white,
+.button-border-grey,
+.button-solid-black {
+	background: none;
+	cursor: pointer;
+	font-family: $gotham-ssa;
+	font-size: 16px;
+	font-weight: 400;
+	padding: 15px 26px 13px;
+	line-height: 28px;
+	text-transform: uppercase;
+}
+.button-border-black { border: 3px solid #000; }
+.button-border-white { border: 3px solid #fff; }
+.button-border-grey { 
+	border: 1px solid #dadada; 
+	
+	&:hover {
+		border: 1px solid black;
+	}
+}
+
+.button-solid-black { 
+	background: #333;
+	border: 3px solid #333;
+	color: #fff;
+}
+
+
+/////////////////////////////////////////////////////
+// Current Issue Styles 
+/////////////////////////////////////////////////////
+.current-issues,
+.menu-current-issues,
+.newsletters {
+  list-style: none;
+} 
+
+.current-issue {
+	position: relative;
+	overflow: auto;
+	width: 100%;
+}  
+.newsletters {
+	float: left;
+	width: 100%;
+}
+.newsletters li:first-child { padding-right: 10px; }
+.newsletters li:nth-child(2) { padding-left: 10px; }
+
+.newsletter-item {
+	float: left;
+	width: 50%;
+}
+
+
+  .issue-cover {
+  	float: left;
+    width: 40%;
+  }
+
+  .issue-info {
+  	float: left;
+  	clear: right;
+  	width: 60%;
+    padding-left: 25px;
+  
+  	@include susy-breakpoint($bigger, $bigger-layout){
+  	  width: 50%;
+  	}
+  }
+
+  .issue-number,
+  .newsletters-description {
+  	margin-bottom: 12px;
+  	color: $dark-grey;
+    font-family: $gotham-ssa;
+  	font-size: 14px;
+  	font-size: .7em;
+  	text-transform: uppercase;
+  }
+  .issue-number { margin-top: 5px; }
+  .newsletters-description { margin-top: -5px; 
+  	
+  }
+  .issue-title a,
+  .newsletters-title {
+  	display : block;
+  	margin: 0 0 30px;
+  	font-family: $freight-display;
+  	font-size: 30px;
+  	line-height: 28px;
+  }
+  .issue-title a { }
+  .newsletters-title { color: #999999; }
+
+.current-issues {
+  @include span(12);
+  padding: 42px 6.0755337%;
+  background-color: #f1f1f1;
+  
+  .current-issue {
+    float: left;
+    width: 48.507462687%;
+    padding: 2.463054187%;
+    &:first-child {
+      margin-right: 2.617801047%;
+    }
+    &:hover { background-color: #fff;}
+  }
+  
+  .issue-title a{
+  	color: #000;
+  	&:hover{ color : $dark-grey; } 
+  }
+}
+
+
+.menu-current-issues {
+  float: left;
+  width: 100%;
+  
+
+  .issue-title a{
+  	color: $med-grey;
+  	&:hover{ color:white; }
+  }
+  
+  .issue-info {
+  
+  	@include susy-breakpoint($bigger, $bigger-layout){
+  	  width: 50%;
+  	}  
+  }
+}
+.current-issue,
+.newsletters {
+	padding-bottom: 63px;
+	border-bottom: 1px solid #3b3b3b;
+	margin-bottom: 62px;
+}
+
+
+
+
+ 
+/////////////////////////////////////////////////////
+// Past Issue Styles 
+/////////////////////////////////////////////////////
+.past-issues {
+  float: left;
+  box-sizing: content-box;
+  width: 100%;
+  padding-bottom: 98px;
+  padding-right: 10px;
+  padding-left: 10px;
+  margin-right: -10px;
+  margin-left: -10px;
+  font-family: $gotham-ssa;
+  color: $med-grey;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: #fff;
+  
+  @include susy-breakpoint($big, $big-layout){
+  	padding-right: 2.7093596%;
+  	padding-left: 2.7093596%;
+  	margin-right: -2.578125%;
+  	margin-left: -2.578125%;
+  }
+  
+
+}
+
+.past-issue-listing {
+  @include span(12);
+  list-style: none;
+  
+	@include susy-breakpoint($bigger, $bigger-layout) {
+    @include pre(1);
+    @include post(1);
+  }
+}
+
+.past-issues-title {
+  margin: 81px auto 66px;
+  color: #000;
+  font-family: $gotham-ssa;
+  font-size: 40px;
+  font-weight: 200;
+  text-transform: uppercase;
+}
+
+.past-issue {
+  float: left;
+  margin-left: 6.650246305%;
+  margin-bottom: 45px;
+  width: 11.247947455%;
+  line-height: 1;
+  font-size: 14px;
+  @include susy-breakpoint($big, $big-layout){
+    font-size: 22px;
+  }
+  &:first-child { margin-left: 0; }
+}
+
+.past-issue-number {
+  margin: 14px 0 10px;
+  font-weight: 500;
+}
+
+
+
+
+
+
+

@@ -1,0 +1,513 @@
+.node-type-feature {
+  
+  #mobile-header {
+    background-color: transparent;
+    
+    // make sure the header is white when you are scrolling
+    // and make the h1 black
+    &.detached {
+      background-color: #f1f1f1;
+	  
+	  .drawer-toggle {
+	  	background-image: url("../img/icons/menu-expand-black.svg");
+	  }
+      
+      .svg-logo {
+        fill: #000;
+      }
+    }
+  }
+
+  #header { 
+    z-index: 1; 
+  }
+  
+  .svg-logo {
+    fill: #f4f4f4;
+  }
+  
+  #main {     
+	  opacity:1;
+		@include susy-breakpoint($big, $big-layout) {
+//       margin-top: calc(-58px - 2.34375vw); /*vw currently not supported in calc. */
+        
+       position: absolute;
+       top: 0;
+    }
+   }
+ }
+
+
+.credits {
+	font-size: 14px;
+	color: #ccc;
+	font-family: $gotham-ssa;
+	
+}
+
+
+#cover {
+	opacity: 0;
+	font-family: $gotham-ssa;
+	color: #fff;
+	text-align: center;
+	background-color: #ccc;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: table;
+	box-sizing: content-box;
+	width: 100%;
+  height: 600px;
+	position: relative;
+	float: left;
+	margin-top: 0px;
+	margin-left: -10px; 
+	margin-right: -10px;
+	padding-right: 10px;
+	padding-left: 10px;
+	
+	@include susy-breakpoint($big, $big-layout) {
+//    background-attachment: fixed;
+		padding-right: 2.7093596%;
+		padding-left: 2.7093596%;
+		margin-right: -2.578125%;
+		margin-left: -2.578125%;
+    height: 1000px;
+	
+  }
+
+	.overlay {
+		width: 100%;
+		margin-left: -10px; 
+		margin-right: -10px;
+		margin-top: 0px;
+		padding-right: 10px;
+		padding-left: 10px;
+		position: absolute;
+		top: 0px;
+//		background: black;
+		z-index: 0;
+		background: rgba(0,0,0,1);
+		opacity: 1;
+		@include susy-breakpoint($big, $big-layout) {
+				padding-right: 2.7093596%;
+				padding-left: 2.7093596%;
+				margin-right: -2.578125%;
+				margin-left: -2.578125%;
+		}
+	}
+} // cover
+
+
+
+#feature-header {
+	position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 10px;
+	color: #fff;
+	text-align: center;
+	z-index: 10;
+	@include opacity(0);
+	@include transform(translate3d(0, 25px, 0));
+					
+	@include susy-breakpoint($big, $big-layout) {
+    margin: 0 2.34375%;
+	}
+		
+	@include susy-breakpoint($bigger, $bigger-layout) {}
+		
+	h1 {
+	
+			font-family: $freight-display;
+		  	font-size: 13vw;
+		  	line-height: 11.5vw;
+		  	font-weight: 900;
+		  	margin: 0px auto 15px;
+		  	padding: 0px;
+		
+		  	@include susy-breakpoint($big, $big-layout) {
+		  		font-size: 10vw;
+		  		line-height: 8.5vw;
+		  		margin: 0px auto 20px;
+		  	}
+			
+		  	@include susy-breakpoint($bigger, $bigger-layout) {
+		  		font-size: 6vw;
+		  		line-height: 6vw;
+		  		margin: 0px auto 25px;
+		  	}
+  	
+} // h2 
+
+	h4 {
+	
+		  	width: 80%;
+		  	font-size: 16px;
+		  	line-height: 22px;
+		  	text-transform: none;
+		  	margin: 0px auto 40px;
+			font-weight:200;
+		  	padding: 0px;
+	
+		  	@include susy-breakpoint($big, $big-layout){
+		  		font-size: 18px;
+		  		line-height: 24px;
+		  		margin: 0px auto 50px;
+		  	} // anything bigger than 600px 
+		
+		  	@include susy-breakpoint($bigger, $bigger-layout){
+		  		font-size: 20px;
+		  		line-height: 28px;
+		  		margin: 0px auto 60px;
+		  	} // anything bigger than 1024px 
+
+ } // h4
+	  
+	h5 {
+			  	font-size: 16px;
+			  	line-height: 22px;
+			  	color: rgba(255,255,255,0.50);
+			  	margin: 0px;
+			  	padding: 0px;
+				font-weight: 200;
+			
+			  	@include susy-breakpoint($big, $big-layout) {
+			  	//	anything bigger than 600px 
+			  		font-size: 18px;
+			  		line-height: 24px;
+			  	}
+				
+			  	@include susy-breakpoint($bigger, $bigger-layout) {
+			  	//	anything bigger than 1024px 
+			  		font-size: 20px;
+			  		line-height: 28px;
+			  	}
+		} // h5
+
+} // copy
+
+
+.feature-utilities {
+	margin: 0 2.34375%;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 10;
+}
+
+.feature-story-commitment {
+	display: none;
+    font-size:16px;
+	@include span(5);
+	@include susy-breakpoint($big, $big-layout) {
+
+	    font-size:18px;
+		display: block;
+	}
+	@include susy-breakpoint($bigger, $bigger-layout) {
+
+	    font-size: 20px;
+		@include pre(1); 
+		@include span(4);
+	}
+	text-align: left;
+	margin-top: -7px;
+	margin-bottom: 19px;
+	z-index: 10;
+	font-weight: 300;
+	@include opacity(0);
+	@include transform(translate3d(0, 25px, 0));
+
+	.feature-commitment {
+		cursor: pointer;
+		width: 24px;
+		height: 18px;
+		background-image: url('../img/icons/icon-feature-white.svg');
+		background-repeat: no-repeat;
+		background-position: left center;
+		display: inline-block;
+		margin-right: 10px;
+		vertical-align: middle;
+		margin-top: -3px;
+	}
+} 
+
+	#cover-scroller {
+		display: none;
+		@include susy-breakpoint($bigger, $bigger-layout) {
+			display: block;
+		}
+    float: left;
+		width: span(2);
+		height: 20px;
+		margin: 0px auto 27px;
+  	text-align: center;
+  	cursor: pointer;
+		background: url("../svg/arrow-expand.svg") no-repeat transparent top center;
+		background-size: contain;
+		@include opacity(0);
+		
+		&:hover {
+			@include opacity(.2);
+		}
+  } 
+  
+
+
+
+
+  .feature-feed-translate-in #cover {
+	  opacity: 1;
+	  .overlay {
+		  background: rgba(0,0,0,0.3);
+	  }
+  }
+
+// INTRO COPY BLOCK NODE :: AKA "Intro"
+
+.intro-copy {
+
+	margin: 98px 0px 80px;
+	width: 100%;
+	
+	@extend .contain;
+
+	p {
+		  	font-size: 30px;
+		  	margin-right: 0px;
+			font-weight: 100;
+		  	margin-bottom: 35px;
+		  	vertical-align: baseline;
+	
+		  	@include susy-breakpoint($big, $big-layout){
+		  		@include pre(1); 
+		  		@include post(1);
+		  	}
+	
+		  	@include susy-breakpoint($bigger, $bigger-layout){
+		  		@include pre(2); 
+		  		@include post(2);
+		  	}
+	
+  } // p
+
+  p:last-child {
+  	margin-bottom: 0px;
+  }
+  
+} // intro-copy
+
+// COPY BLOCK NODE :: AKA "8-column Copy"
+.copy-block {
+	// under 600px 
+	margin: 0px;
+	width: 100%;
+	margin-bottom: 80px;
+	@extend .contain;
+
+  p {
+		  margin-right: 0px;
+		  margin-bottom: 32px;
+		  vertical-align: baseline;
+		  	
+		  @include susy-breakpoint($big, $big-layout){
+			  //anything bigger than 600px 
+			  @include pre(1); 
+			  @include post(1);
+		  }
+			
+		  @include susy-breakpoint($bigger, $bigger-layout){
+			  //anything bigger than 1024px 
+			  @include pre(2); 
+			  @include post(2);
+		  }
+	}
+    p:last-child {
+  			margin-bottom: 0px;
+  	}
+}
+
+
+// 8-column image
+//.standard-image {
+//
+//  & + .copy-block {
+//  	padding-top: 98px;
+//  }
+//
+//}
+
+//// 12-column image
+//.full-width-image {
+//  // any .full-width-image that follows a .full-width-image should have the same margin-bottom
+//  & + .full-width-image {
+//  	margin-bottom: 14px;
+//  }
+//
+//  & + .copy-block {
+//  	padding-top: 117px;
+//  	padding-bottom: 92px;
+//  }
+//}
+
+//
+//// Full Bleed Image
+//.full-bleed-image {
+//
+//  & + .copy-block {
+//  	padding-top: 22px;
+//  }
+//}
+
+
+
+
+.caption-slider {
+
+	width: 100%;
+	margin-bottom: 80px;
+	color: #ccc;
+	@extend .contain;
+
+  .js-story-slider,
+  .feature-slider {
+  	margin-bottom: 0px;
+  }
+  
+
+}
+
+
+
+.full-width-slider .credits { 
+	margin-left: 2.6%;
+}
+
+
+
+
+.node-type-feature .portrait-image,
+.node-type-feature .portrait-video {
+	margin-bottom: 80px;
+	@include susy-breakpoint($big, $big-layout) {
+		@include pre(1); 
+    @include span(10);
+	}
+  
+	@include susy-breakpoint($bigger, $bigger-layout) {
+		@include pre(2); 
+    @include span(8);
+	}
+}
+
+
+
+
+
+
+
+
+
+.quote {
+	font-size:  24px;
+	line-height: 31px;
+	font-style: italic;
+  font-weight: 600;
+  text-transform: uppercase;
+	width: 80%;
+	margin: 0px auto 70px;
+
+	@include susy-breakpoint($bigger, $bigger-layout) {
+		font-size: 50px;
+		line-height: 70px;
+	}
+
+  &::before {
+    content:'\201C';
+    display: block;
+    margin-bottom: 30px;
+    font-family: times, serif;
+    font-size: 100px;
+    font-weight: 400;
+  }
+} // quote
+
+
+.pullquote {
+	position: relative;
+	float: left;
+	width: 100%;
+	padding: 0px 10px;	
+	margin-left: -10px; 
+	margin-right: -10px;
+	margin-bottom: 80px;
+	background: rgba(0,0,0,0.45);
+	box-sizing: content-box;
+	@include background-size(cover);
+
+	@include susy-breakpoint($big, $big-layout) {
+		padding-right: 2.7093596%;
+		padding-left: 2.7093596%;
+		margin-right: -2.578125%;
+		margin-left: -2.578125%;
+	}
+
+	.copy {
+		width: 100%;
+		padding: 60px 0;
+		font-family: $gotham;
+		font-style: italic;
+		text-align: center;
+		color: #fff;
+		box-sizing: content-box;
+		position: relative;
+		z-index: 10;
+
+		@include susy-breakpoint($big, $big-layout) {
+			padding: 150px 0;
+		}
+
+
+		.author {
+			font-size: 24px;
+			line-height: 18px;
+			font-family: $freight-display;
+		}
+
+	} // copy 
+
+	.overlay {
+		width: 100%;
+		margin-left: -10px; 
+		margin-right: -10px;
+		margin-top: 0px;
+		padding-right: 10px;
+		padding-left: 10px;
+		position: absolute;
+		top: 0px;
+		background: rgba(0,0,0,0.6);
+		z-index: 0;
+
+		@include susy-breakpoint($big, $big-layout) {
+			padding-right: 2.7093596%;
+			padding-left: 2.7093596%;
+			margin-right: -2.578125%;
+			margin-left: -2.578125%;
+		}
+
+		@include susy-breakpoint($bigger, $bigger-layout) {}
+
+	} // overlay
+
+	// FULL WIDTH BLOCKQUOTE SIBLING STYLES
+
+//	& + .copy-block {
+//		padding-top: 107px;
+//	}
+
+}
+
+

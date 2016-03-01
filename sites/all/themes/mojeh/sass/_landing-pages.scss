@@ -1,0 +1,870 @@
+@import '_variables';
+@import '_icons';
+
+// header elements grouping for ajax
+#lander-header {
+  overflow: hidden;
+  display: none;
+}
+
+@include susy-breakpoint($big, $big-layout){
+    #lander-header {
+      display: block;
+    }
+}
+
+
+#nav{
+	overflow: auto;
+	overflow-x: hidden;
+//	opacity:0;
+}
+
+
+// Slide-in Loading
+.come-in {
+  @include transform(translateY(150px));
+  -webkit-animation: story-in 0.6s ease forwards;
+     -moz-animation: story-in 0.6s ease forwards;
+          animation: story-in 0.6s ease forwards;
+}
+
+.already-visible {
+  @include transform(translateY(0));
+  -webkit-animation: none;
+     -moz-animation: none;
+          animation: none;
+}
+
+@-webkit-keyframes story-in { to { @include transform(translateY(0)); }}
+   @-moz-keyframes story-in { to { @include transform(translateY(0)); }}
+        @keyframes story-in { to { @include transform(translateY(0)); }}
+
+
+
+
+
+/////////////////////////////////////////////////////
+//=Promoted Content Styles 
+/////////////////////////////////////////////////////  
+.promoted-area {
+  float: left;
+  width: 100%;
+}
+
+
+// Basic Promoted Story Extend
+%promoted-story {
+	margin-bottom: 162px;
+	background-image: none;
+	font-family: 'Gotham SSm A', 'Gotham SSm B';
+	
+	@include susy-breakpoint($big, $big-layout){
+    margin-bottom: 162px;
+	}
+	
+	@include susy-breakpoint($bigger, $bigger-layout) {
+		margin-bottom: 76px;
+	}
+	
+	.story-breadcrumb {
+		display:inline;
+		position:relative;
+		font-size: 0.8em;
+		top:-0.5625em;
+		text-transform: uppercase;
+		font-weight: 300;
+		opacity:0.196;
+		-webkit-font-smoothing: subpixel-antialiased;
+		@include transition-property(opacity);
+		@include transition-duration(0.15s);
+    
+    &:hover {opacity: .5;} 
+	}
+
+	// Keep promoted area heading rules in here
+	.story-title {
+		font-size: 1.7em;
+		margin-top: 0.047619047619047616em;
+		font-weight: 200;
+		line-height:1em;
+		text-transform: uppercase;
+		margin-bottom: 30px;
+		@include susy-breakpoint($bigger, $bigger-layout){
+			font-size: 2.1em;
+		}
+	}
+
+
+	.story-blurb {
+		font-size: 0.900em;
+		margin-top: 0.8888888888888888em;
+		font-weight: 300;
+		font-family: 'Gotham SSm A', 'Gotham SSm B';
+		line-height:1.556em;
+	}
+	
+	.story-caption {
+		margin-top:20px;
+		
+		@include susy-breakpoint($big, $big-layout){
+			margin-top:0px;
+		}
+	}
+}
+
+
+.small-promoted-story {
+	@extend %promoted-story;
+	@include span(12);
+
+	@include susy-breakpoint($bigger, $bigger-layout){
+		@include span(10 wider);
+		padding: 28px span(gutter());
+		margin-left: span(1 no-gutter);
+		@include transition-property(background-color);
+		@include transition-duration(0.75s);
+    
+		&:hover {
+      background-color: #fff;
+		}
+	}
+}
+
+
+// Promoted Story-[Image Float]-[Image With]
+.ps-left-4 {
+	@extend .small-promoted-story;
+	@include susy-breakpoint($big, $big-layout){
+		@include small-promoted-story(12, first, 4, last, 8);
+	}
+	@include susy-breakpoint($bigger, $bigger-layout){
+		@include small-promoted-story(10, first, 4, last, 6);
+	}
+}
+
+.ps-left-5 {
+	@extend .small-promoted-story;
+	@include susy-breakpoint($big, $big-layout){
+		@include small-promoted-story(12, first, 5, last, 7);
+	}
+	@include susy-breakpoint($bigger, $bigger-layout){
+		@include small-promoted-story(10, first, 5, first, 4);
+	}
+}
+
+
+.ps-right-6 {
+	@extend .small-promoted-story;
+	@include susy-breakpoint($big, $big-layout){
+		@include small-promoted-story(12, last, 6, first, 6);
+	}
+	@include susy-breakpoint($bigger, $bigger-layout){
+		@include small-promoted-story(10, last, 6, first, 4);
+	}
+}
+
+
+
+.ps-right-4 {
+	@extend .small-promoted-story;
+	@include susy-breakpoint($big, $big-layout){
+		@include small-promoted-story(12, last, 4, first, 8);
+	}
+	@include susy-breakpoint($bigger, $bigger-layout){
+		@include small-promoted-story(10, last, 4, first, 6);
+	}
+}
+
+.ps-right-5 {
+	@extend .small-promoted-story;
+	@include susy-breakpoint($big, $big-layout){
+		@include small-promoted-story(12, last, 5, first, 7);
+	}
+	@include susy-breakpoint($bigger, $bigger-layout){
+		@include small-promoted-story(10, last, 5, first, 5);
+	}
+}
+
+.ps-left-6 {
+	@extend .small-promoted-story;
+	@include susy-breakpoint($big, $big-layout){
+		@include small-promoted-story(12, first, 6, last, 6);
+	}
+	@include susy-breakpoint($bigger, $bigger-layout){
+		@include small-promoted-story(10, first, 6, last, 4);
+	}
+}
+
+
+// Gallery //
+.gallery-promoted {
+	@extend .small-promoted-story;
+	.story-caption{
+
+		@include susy-breakpoint($bigger, $bigger-layout){
+			width: 65%;
+		}
+	}
+}
+
+
+// 12 Column //
+.bigger-promoted-story {
+	@extend %promoted-story;
+	@include span(12 of 12);
+  position: relative;
+	color: #fff;
+	background-size: cover;
+	background-position: center;
+	
+  @include susy-breakpoint($big, $big-layout){
+		background-position: initial;
+	}
+	
+	.story-caption {
+    position: relative;
+    z-index: 2;
+		margin-top: 200px;
+		margin-bottom: 42px;
+		margin-left: 10px;
+		margin-right: 10px;
+		
+		.story-breadcrumb {
+			opacity:0.5;
+			font-weight: 200;
+		}
+		
+		.story-blurb {
+
+			font-family: $gotham;
+			font-weight: 100;
+		}
+
+		@include susy-breakpoint($big, $big-layout){
+			margin-left: 2.5221%;
+			@include span(10 of 12);
+		}
+
+		@include susy-breakpoint($bigger, $bigger-layout){
+			@include pre(1 of 12);
+			@include span(6 of 12);
+		}
+	}
+  
+	.overlay {
+		opacity: 0.5;
+		position: absolute;
+		z-index: 1;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: #000;
+		@include transition-property(opacity);
+		@include transition-duration(0.75s);
+    
+    &:hover,
+    &.hover { opacity: .75; }
+	}
+}
+
+
+// Basic Story Extend
+%latest-story { 
+	@include span(12);
+	padding: 42px 0; 
+	background-image: none;
+}
+
+
+/////////////////////////////////////////////////////
+// =Latest Blocks 
+/////////////////////////////////////////////////////
+.latest {
+  float: left;
+  width: 100%;
+  section:first-child { margin-top: 0; }
+}
+
+.latest-container {
+  float: left;
+  width: 100%;
+  margin-bottom: 150px;
+  article:last-child { margin-bottom: 0; }
+}
+
+.latest-title {
+  @include span(12);
+  margin-bottom: 60px;
+  font-family: $gotham;
+  font-size: 40px;
+  font-weight: 100;
+  -webkit-font-smoothing: subpixel-antialiased;
+  color: #ccc;
+  text-transform: uppercase;
+  border-top: 1px solid #dadada;
+  padding-top: 20px;
+  letter-spacing: -1px;
+  @include susy-breakpoint($big, $big-layout) {
+	  font-size: 56px;
+  }
+  
+  @include susy-breakpoint($bigger, $bigger-layout) {
+	   @include span(9);
+    @include pre(2);
+  }
+}
+
+
+#latest-scroller {
+	display: none;
+  
+	@include susy-breakpoint($bigger, $bigger-layout) {
+		display: block;
+		pointer-events: none;
+		opacity: 0;
+		position: fixed;
+		top: 25px;
+		left: 80px;
+    font-family: $gotham-ssa;
+		font-weight: 300;
+		-webkit-font-smoothing: subpixel-antialiased;
+		font-size: 16px;
+		color: #ccc;
+		text-transform: uppercase;
+		list-style: none;
+		color: black;
+
+		@include transform(translate3d(0,50px,0));
+		@include transition-property(opacity, transform);
+		@include transition-timing-function(ease-in, ease-in); 
+		@include transition-duration(.3s,.3s);
+
+		&.scroller-visible {
+			pointer-events: auto;
+			opacity: 1;
+			z-index: 10;
+			@include transition-property(opacity, transform);
+			@include transition-timing-function(ease-out, ease-out); 
+			@include transition-duration(.3s,.3s);
+			@include transform(translate3d(0,0px,0));
+		}
+
+		li {
+			margin-bottom: 12px;
+			line-height: 1;
+    
+	
+			a { 
+				@include transition-property(opacity);
+				@include transition-duration(.2s);
+				opacity: 0.3;
+        &:hover { opacity: 0.7;}
+			}
+	  
+			a.current { opacity: 1;}
+		}
+	}
+}
+
+
+
+//Extending all latest blocks on Landing Pages in lieu of pagination
+.page-landing-pages %latest-story{
+	 
+		@include susy-breakpoint($bigger, $bigger-layout){
+			@include span(10 wider);
+			margin-left: span(1 no-gutter);
+		}
+}
+
+// Basic Story Extend
+%latest-story { 
+	@include span(12);
+	padding: 28px 0; 
+	margin-bottom: 60px;
+	
+	.story-caption {
+		margin-top:20px;
+		
+		@include susy-breakpoint($big, $big-layout){
+			margin-top:0px;
+		}
+	}
+	
+	@include susy-breakpoint($bigger, $bigger-layout){
+		@include span(9 wider);
+		padding: 28px span(gutter());
+		margin-left: span(2 no-gutter);
+		@include transition-property(background-color);
+		@include transition-duration(0.75s);
+        
+		&:hover { background-color: #fff;}
+	}
+	
+	.story-breadcrumb {
+		font-family: 'Gotham SSm A', 'Gotham SSm B';
+		text-transform: uppercase;
+		font-size: 0.8em;
+		font-weight: 300;
+		margin-bottom: 0.0625em;
+		margin-top: -0.25em;
+		padding-top: 0;
+		-webkit-font-smoothing: subpixel-antialiased;
+
+//		&:hover {
+//			opacity: .5;
+//		}
+//
+		a {
+			@include transition-property(opacity);
+			@include transition-duration(0.15s);
+			opacity:0.196;
+			&:hover {opacity: .5;} 
+		}
+		// TODO if these match with any other story breadcrumbs, let's move them to a global area or fuckit?
+	}
+
+	.story-title {
+		font-family: "freight-display-pro",serif;
+		font-style: normal;
+		font-weight: 700;
+		font-size: 1.6em;
+		@include susy-breakpoint($big, $big-layout){
+			font-size: 1.9em;
+		}
+		line-height: 1.105263157894737em;
+		margin-bottom: 27px;
+		margin-right: 0.395em;
+	}  
+
+	.story-blurb {
+		font-size: 1em;
+		line-height: 1.4;
+		margin-bottom: 0;
+	}
+}
+
+
+
+
+.small-latest-story {
+	@extend %latest-story;
+
+	@include susy-breakpoint($big, $big-layout){
+		img,
+		.feed-video
+		{ 
+			@include span(6 of 12);
+			height: auto;
+		}
+
+		.story-caption {
+			width: span(6 of 12);
+			float: left;
+		}
+	}
+
+	@include susy-breakpoint($bigger, $bigger-layout){
+		img,
+		.feed-video { 
+			@include span(4 of 9);
+			height: auto;
+		}
+
+		.story-caption {
+			float: left;
+			width: span(4.5 of 9);
+		}
+	}
+}
+
+
+.page-landing-pages	{
+  @include susy-breakpoint($bigger, $bigger-layout){
+  
+    .small-latest-story {
+
+    	img,
+    	.feed-video { 
+			@include span(4 of 10);
+			height: auto;
+		}
+
+    	.story-caption {
+    		width: span(6 of 10);
+    	}
+    }
+    
+    .ls-right {
+  	  img,
+      .feed-video { @include last; }
+    }
+  }
+}	
+
+
+// Latest Story-[Image Float]
+////////////////
+.ls-left {
+	@extend .small-latest-story;
+}  
+
+.ls-right {
+	@extend .small-latest-story;
+
+	@include susy-breakpoint($big, $big-layout){
+	  img,
+    .feed-video { @include last; }
+  }
+}
+
+
+
+// Bigger Story
+////////////////
+.bigger-story {
+	@extend %latest-story;
+
+	@include susy-breakpoint($bigger, $bigger-layout){
+		.large-summary {
+			width: span(6 of 9);
+		}
+	}
+	
+	.story-caption {
+		margin-top:28px;
+		@include susy-breakpoint($big, $big-layout){
+			width: 75%;
+		}
+	}
+    
+	.overlay {
+		opacity: 0.5;
+		position: absolute;
+		z-index: 2;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: #000;
+		@include transition-property(opacity);
+		@include transition-duration(0.75s);
+		
+    &:hover {opacity: .75;} 
+	}
+}
+	 
+
+// Gallery Story
+////////////////
+.gallery-story {
+	@extend %latest-story;
+	.story-caption{
+		margin-bottom: 20px;
+		@include susy-breakpoint($big, $big-layout){
+			margin-bottom: 30px;
+		}
+		@include susy-breakpoint($bigger, $bigger-layout){
+			width: 65%;
+		}
+	}
+}
+	
+
+
+
+
+
+/////////////////////////////////////////////////////
+// =Story Feed
+/////////////////////////////////////////////////////
+.story-feed {
+	@include susy-breakpoint($bigger, $bigger-layout){
+		@include pre(2);
+		@include span(9 of 12);
+	}
+}
+
+.story {
+	margin-bottom: 69px;
+
+	.story-caption {
+		position: relative;
+		@include susy-breakpoint($big, $big-layout){
+			width: 75%;
+		}
+	}
+
+
+	@include susy-breakpoint($big, $big-layout) {
+		@include span (4 of 12);
+
+		&:nth-child(3n) {
+			@include last;
+		}
+	}
+
+	@include susy-breakpoint($bigger, $bigger-layout){
+		@include span (3 of 9);
+	}
+
+	img { 
+		margin-bottom: 14px;
+	}
+
+	.commitment {
+		position: absolute;
+		font-family: 'Gotham SSm A', 'Gotham SSm B';
+		font-size:26px;
+	}
+}
+
+
+
+
+
+/////////////////////////////////////////////////////
+// =Features
+/////////////////////////////////////////////////////
+%feature {
+	position: relative;
+	display: block;
+	float: none;
+	width: 106%;
+	height: 500px; 
+	padding-right: 10px;
+	padding-left: 10px;
+	margin-bottom: 120px;
+	padding-top: 38px;
+	padding-bottom: 38px;
+	margin-left: -10px;
+	margin-right: -10px;
+	color: #fff;
+	text-align: center;
+	background-attachment: fixed;
+	background-color: #ccc;
+	background-position: center;
+	background-repeat: no-repeat;
+	display: table;
+	background-size: cover;
+	
+	&:first-child{
+		margin-top: 0px;
+	};
+
+	@include susy-breakpoint($big, $big-layout){
+    padding-right: 3.4187192%;
+    padding-left: 2%;
+    margin-right: -2.578125%;
+    margin-left: -2.578125%;
+	}
+
+	@include susy-breakpoint($bigger, $bigger-layout) {
+//    background-attachment: fixed;
+	}
+
+	.story-caption {
+		z-index: 3;
+		position: relative;
+		vertical-align: middle;
+		color:#ffffff;
+		display:table-cell;
+		
+		.story-blurb{
+//      margin-bottom: 8vh; ilia you can change this to something else
+			font-weight: 300;
+			-webkit-font-smoothing: subpixel-antialiased;
+	    @include susy-breakpoint($bigger, $bigger-layout){
+			  width: 60%;
+			  margin: auto;
+		    margin-bottom: 8vh;
+			}
+		}
+		
+    &:hover + .overlay{
+      opacity: .75;
+    }
+		.story-breadcrumb {
+			opacity:0.5;
+			font-weight:200;
+		}
+		
+	}
+	
+
+	.overlay {
+		opacity: 0.5;
+		position: absolute;
+		z-index: 2;
+		top: 0;
+		left: 0;
+    right: 0;
+		height: 100%;
+		background: #000;
+		@include transition-property(opacity);
+		@include transition-duration(0.75s);
+		
+    &:hover {opacity: .75;} 
+	}
+}
+
+
+.promoted-feature,
+.latest-feature {
+	@extend %promoted-story;
+	@extend %feature; 
+	
+	.story-title {
+		font-family: "freight-display-pro";
+		font-size:40px; /* otherwise longer words can't wrap and create overflow problems */
+		font-weight:700;
+		text-transform:none;
+    //      margin-bottom: 8vh; ilia you can change this to something else
+		margin-bottom: 14px;
+    
+    	@include susy-breakpoint($big, $big-layout){
+    		margin-top: 8vh;
+		    line-height:56px;
+    		font-size:59px;
+      }
+	}
+	
+	.story-blurb {
+		font-family: "freight-text-pro";
+		font-weight: 400;
+		font-size:22px;
+		line-height: 1.5;
+		padding-left:5%;
+		padding-right:5%;
+    //      margin-bottom: 8vh; ilia you can change this to something else
+    
+    @include susy-breakpoint($big, $big-layout){
+      margin-bottom: 8vh;
+    }
+	}
+}
+
+
+.latest-feature + .latest-feature,
+.promoted-feature + .promoted-feature  {
+	margin-top: -120px;
+} 
+
+
+/////////////////////////////////////////////////////
+// =Daily
+/////////////////////////////////////////////////////
+.the-daily {
+	@include transition-property(background-color);
+	@include transition-duration(0.75s);
+	@extend %promoted-story;
+	margin-top: 0;
+	margin-bottom: 40px;
+	@include span(12);
+	position: relative;
+	text-align: center;
+  
+	@include susy-breakpoint($bigger, $bigger-layout){
+		display: table;
+    overflow: auto;
+    border-collapse: separate;
+	}
+  
+	@include susy-breakpoint($bigger, $bigger-layout) {
+    &:hover {
+      @include transition-property(background-color);
+      @include transition-duration(0.75s);
+      background-color: #fff;
+
+      .daily-date { background-color: #fff; }
+    }
+	}
+
+	.story-title {
+		margin-top: 20px;
+		font-size: 36px;
+		font-size: 2.1em;
+    
+		@include susy-breakpoint($bigger, $bigger-layout){
+			margin-top: 50px;
+		}
+	}
+}
+
+
+.daily-image {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  min-height: 450px;
+  background-position: center;
+  background-size: cover;
+  
+	@include susy-breakpoint($bigger, $bigger-layout){
+    position: relative;
+    float: left;
+    display: block;
+  }
+}
+
+.daily-caption {
+  padding-top: 28px;
+  margin-top: 470px;
+  overflow: auto;
+
+	@include susy-breakpoint($bigger, $bigger-layout){
+    display: table-cell;
+    width: 50%;
+    padding: 28px 5%;
+    margin-top: 0;
+    vertical-align: middle;
+  }
+}
+
+
+  .daily-calendar {
+    margin-top: 50px;
+    color: #ccc;
+    line-height: 1;
+    text-transform: uppercase;
+	font-weight: 400;
+    
+    p { margin-top: 0; margin-bottom: 7px;}
+  }
+  
+  .daily-day,
+  .daily-month {
+    font-size: 14px;
+    font-size: 0.7em;
+  }
+  
+  .daily-date {
+    font-weight: 200;
+    font-size: 39px;
+    font-size: 1.95em;
+    display: inline-block;
+    padding: 0 20px;
+    background-color: #f1f1f1;
+    position: relative;
+    z-index: 1;
+  	@include transition-property(background-color);
+  	@include transition-duration(0.75s);
+  }
+
+  .daily-notch {
+    position: relative;
+    top: -36px;
+    width: 142px;
+    border: 0;
+    border-top: 1px solid #000000;
+	opacity: 0.12;
+    margin-bottom: -7px;
+  }
+  
+  
+  
+
+  
+  

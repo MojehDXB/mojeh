@@ -1,0 +1,405 @@
+/////////////////////////////////////////////////////
+// Slider Styles 
+///////////////////////////////////////////////////// 
+
+#scrollTest {
+	width: 600px;
+	height: 200px;
+	margin: 100px auto;
+	background: #A3CBE0;
+	border: 2px solid #000;
+	overflow: auto;
+	box-shadow: 0 0 10px #000;
+	position: absolute;
+	display: block;
+	ul {float: left;
+margin-right: -999em;
+white-space: nowrap;
+list-style: none;}
+li {
+	margin: 15px;
+	text-align: center;
+	float: left;
+	display: inline;
+}
+	img { margin: 15px;
+text-align: center;
+float: left;
+display: inline; 
+width: 200px;}
+}
+.slider {
+	position: relative;
+	overflow: hidden;
+} 
+
+.slide-carousel {
+	overflow-x: scroll;
+    -webkit-user-select: none;
+	-webkit-overflow-scrolling: touch;
+	height:106%;
+}
+.slides {
+  box-sizing: content-box;
+  list-style: none;
+  overflow: hidden;
+  height:100%;
+  width: 0;
+} 
+
+.slide {
+  opacity: 0;
+  @include translateX(15px);
+	float: left;
+  @include transition-property(height, background-color);
+  @include transition-duration(.5s, .2s);
+
+	img { width: auto; }
+}
+
+      
+
+//=Feed Sliders
+//////////////////////////////////
+.feed-slider {
+	@extend .slider;
+	height: 170px;
+	@include susy-breakpoint($big, $big-layout){
+		height: 230px;
+	}
+  
+	.slide { 
+		margin-right: 2px;
+	}
+  
+	img { 
+		height: 170px; 
+		@include susy-breakpoint($big, $big-layout){
+			height: 220px;
+		}
+	}
+  
+}
+
+
+.promoted-slider {
+	@extend .slider;
+	height: 170px;
+	@include susy-breakpoint($big, $big-layout){
+		height: 318px;
+	}
+  
+	.slide { 
+		margin-right: 2px;
+	}
+  
+	img { 
+		height: 170px; 
+		@include susy-breakpoint($big, $big-layout){
+			height: 308px;
+		}
+	}
+  
+}
+
+
+
+
+
+//=Gallery Sliders
+////////////////////////////////// 
+.js-story-slider,
+.feature-slider {
+  @extend .slider;
+  height: 380px;
+  margin-bottom: $node-element-bottom-padding;
+  background: no-repeat center 100px  url(/sites/all/themes/mojeh/images/loader-black.gif);
+  	
+  &.loaded { background: none; }	
+  img { 
+    height: 380px;
+	
+	&:hover {
+		cursor: hand;
+		cursor: pointer;
+	}
+	   
+  }
+}
+.js-story-slider { margin-bottom: 0; }
+
+.node-type-gallery {
+   .js-story-slider,
+   .feature-slider {
+	   background: no-repeat center 100px  url(/sites/all/themes/mojeh/images/loader-white.gif);
+	   &.loaded { background: none; }	
+   }
+}
+
+
+//=Inline Sliders
+//////////////////////////////////
+.inline-slider {
+	@extend .slider;
+	height: 400px;
+	margin-top: 50px;
+	margin-bottom: 50px;
+  
+	.slide { margin-right: 2px; }
+	img { height: 400px; }
+  
+}
+
+ 
+//=Ribbon Sliders
+////////////////////////////////// 
+%ribbon {
+//	padding: 18px 0px;
+	color: #000;
+	float: left;  
+}
+
+.js-ribbon {
+	@extend .slider;
+	margin: 0;
+  
+	.slide {
+		padding: 10px;
+		margin: 0;
+		height: 100%;
+
+		@include transition-property(background-color);
+		@include transition-duration(0.75s);
+		
+    &:hover {
+  		background-color: #FFF;
+      
+			.overlay-commitment {	
+				@include transition-property(opacity);
+				@include transition-duration(0.75s); 
+				opacity: 1;
+			}
+		}
+	}  
+	
+	#subscription-cost {
+		-webkit-font-smoothing: subpixel-antialiased;
+		font-family: 'Gotham SSm A', 'Gotham SSm B';
+		position: absolute;
+		left: 300px;
+		text-transform: uppercase;
+		color: #ccc;
+		max-width: 310px;
+		top: 209px;
+
+//		letter-spacing: -1px;
+		
+		#number-of-issues{
+			font-size: 16px;
+			font-weight: 400;
+		}
+		
+		#yearly-price {
+			
+			font-size: 32px;
+			font-weight: 200;
+			margin-top: -7px;
+			#little-label {
+				font-size: 16px;
+				font-weight: 300;
+				
+				margin-left: 6px;
+			}
+		}
+	}
+}
+ 
+.ribbon-breadcrumb {
+	display:inline-block;
+	font-family: 'Gotham SSm A', 'Gotham SSm B';
+	text-transform: uppercase;
+	font-size: 14px;
+	font-weight: 400;
+	margin-top: 10px;
+	padding-top: 0px;
+	opacity:0.196;
+
+	@include transition-property(opacity);
+	@include transition-duration(0.15s);
+	&:hover {opacity: .5;} 
+}  
+  
+.ribbon-story-title {
+	margin-bottom: 64px;
+	margin-top:-4px;
+	font-family: "freight-display-pro", serif;
+	font-size: 1.2em;
+	font-weight: 600;
+	line-height: 28px;
+}
+  
+
+// TODO is there a story caption?
+.ribbon-story-caption {
+	position: relative;
+	margin-top: 5px;
+  // TODO there are two margin bottoms here. which one belongs?
+	margin-bottom:20px;
+  margin-bottom: 54px;
+}
+
+
+ 
+//=Header Ribbon
+//////////////////////////////////  
+.header-ribbon {
+  @extend %ribbon;
+  width: 100%;
+ 	height:  392px;
+  text-align: left;
+  margin-bottom: 3vw;
+	margin-top: 50px;
+  
+	@include susy-breakpoint($big, $big-layout) {
+		margin-top: 0px;	
+  }  
+	@include susy-breakpoint($bigger, $bigger-layout) {
+		margin-top: 5px;	
+	}  
+  
+  .js-ribbon {
+   	height: 374px;
+  }  
+  
+  .slides {
+    width: 2000px;
+  }
+  
+  .ribbon-story > a:first-child {
+    display: block;
+    background-color: #dfdfdf;
+  }
+  
+  .ribbon-story-caption {
+  	width: 262px;
+  }
+  
+  img { 
+    width: 282px;
+    height: 154px;
+  }
+  
+	.overlay-commitment {
+		@include transition-property(opacity);
+		@include transition-duration(0.75s);
+		position: absolute;
+		top: -60px;
+		left: 15px;
+		opacity: 0.25;
+	}
+	
+  #slide-subscribe:hover { background-color: #f1f1f1; }
+}  
+
+#slide-subscribe {
+  border-right: 1px solid #dadada;
+  padding: 10px 80px 10px 0;
+  min-width: 440px;
+  margin-right: 30px;
+  position: relative;
+  
+  .slide-subscribe-image {
+	  float: left;
+	  width: auto;
+	  height: 354px;
+	  position: absolute;
+  }
+  
+	.ribbon-subscribe-publication {
+		position: relative;
+		height: 340px;
+		width: 560px;
+	}
+  
+  & + .slide { margin-left: -10px;}
+}
+/* requires js work */
+@media (max-width: 600px) {
+  #slide-subscribe {
+    display: none;
+  }
+}
+
+#slide-subscribe-men {
+  display: none;
+}
+.slide-subscribe-button {
+  position: absolute;
+  bottom: -14px;
+  left: 300px;
+  font-size: 16px;
+}
+.ribbon-subscribe-img { width: 180px; height: auto; }
+
+// TODO can these be unchained by looking for #slide-subscribe .ribbon-breadcrumb?
+.ribbon-breadcrumb.ribbon-subscribe-breadcrumb,
+.ribbon-story-title.ribbon-subscribe-title { display: inline-block; }
+
+.ribbon-breadcrumb.ribbon-subscribe-breadcrumb {
+	margin-top: -5px;
+	width: 290px;
+	left: 300px;
+	position: absolute;
+	font-size: 16px;
+}
+.ribbon-story-title.ribbon-subscribe-title {
+	max-width: 290px;
+	left: 300px;
+	position: relative;
+	top: 28px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 150px;
+	
+	font-family: $gotham;
+	font-weight: 100; 
+	font-style: normal;
+	-webkit-font-smoothing: subpixel-antialiased;
+	font-size: 40px;
+	line-height: 40px;
+	text-transform: uppercase;
+}
+
+
+//=Daily Ribbon
+////////////////////////////////// 
+.daily-ribbon {
+  @extend %ribbon;
+  height: 220px;
+  margin-bottom: 0px;  
+  text-align: center;
+  margin-bottom:76px;  
+  .js-ribbon {
+    height: 220px;
+  }
+  
+  .slides {
+    width: 1700px;
+  }
+  
+  .slide:first-child{
+    margin-left: -10px;
+  }
+  
+  .ribbon-story-caption {
+    width: 152px;
+  }
+  
+  
+  img {
+    width: 152px;
+    height: 98px;
+  }
+}
+
+ 

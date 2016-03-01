@@ -1,0 +1,535 @@
+@import "_config";
+@import "_variables";
+
+
+
+html {
+  height: 100%;
+}
+
+body {
+	background-color: #f1f1f1;
+	-webkit-overflow-scrolling: touch;
+  -webkit-perspective: 1000;
+  
+  @include susy-breakpoint($big, $big-layout){
+    height: 100%;
+    overflow: hidden;
+  }  
+    &.node-type-gallery,
+    &.node-type-video {
+      background-color: #323232;
+    }
+}
+
+
+#scroller {
+  // scroller is to stop the drawer from scrolling away/flickering on the 3d transform
+  // instead we scroll inside #site-wrapper
+  // http://stackoverflow.com/questions/2637058/positions-fixed-doesnt-work-when-using-webkit-transform
+  height: 100%;
+
+  @include susy-breakpoint($big, $big-layout) { 
+    &::after {
+      z-index: 10;
+      position: fixed; /* PROGRESS TESTING */ 
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      background: rgba(37,37,37,0.75);
+      content: '';
+      opacity: 0;
+      @include single-transition(opacity, 0.5s, ease);
+    }
+  }
+}
+
+
+#site-wrapper {
+  -webkit-overflow-scrolling: touch;
+  overflow-x: hidden;
+  width: 100%;
+  
+  @include susy-breakpoint($big, $big-layout) {
+	position: fixed; /* PROGRESS TESTING */ 
+    overflow: hidden;
+    padding-left: 45px;
+    height: 100%;
+	min-height: 600px;
+    overflow-y: scroll;
+  }
+  
+	@include susy-breakpoint($bigger, $bigger-layout) {
+		padding-left: 60px;
+	} 
+}
+
+
+.drawer-container {
+  height: 100%;
+  display: block;
+}
+
+#drawer {
+	position: absolute;
+	top: 0;
+	height: 100%;
+	min-height: 600px;
+	width: 100%;
+	margin-left: 0px;
+	overflow-y: scroll;
+	overflow: hidden;
+	font-family: $gotham-ssa;
+	font-weight: 200;
+	background-color: #252525;
+	cursor:pointer;
+	opacity: 0;
+	z-index: 11;
+	
+	@include transition-property(opacity);
+	@include transition-duration(0.3s);
+	@include transition-timing-function(ease-in);
+	
+	@include susy-breakpoint($big, $big-layout) {
+		opacity: 1;
+		//position: fixed;
+		display: block;   
+		/* height set by drawerSetup() */
+		width: 500px;
+		margin-left: -455px;
+		background-color:#252525;
+		overflow: hidden;
+		z-index: 11;
+		-webkit-animation: none;
+		-moz-animation: none;
+		-ms-animation: none;
+		-o-animation: none;
+		animation: none;
+
+		&:hover {
+			background-color: #252525;
+		}
+	}
+     
+	@include susy-breakpoint($bigger, $bigger-layout) {
+		width: 600px;
+		margin-left: -540px;
+	} 
+    
+	&.toggling {
+		display: block;
+		z-index: 11;
+	}
+}
+
+// Opening and Closing animations for the menu
+@-webkit-keyframes opening-menu { 
+	0% { opacity: 0; } 
+	99% {opacity: 1; }
+	100% { opacity: 1; }
+}
+@-moz-keyframes opening-menu { 
+	0% { opacity: 0; } 
+	99% {opacity: 1; }
+	100% { opacity: 1; }
+}
+@keyframes opening-menu { 
+	0% { opacity: 0; } 
+	99% {opacity: 1; }
+	100% { opacity: 1; }
+}
+
+
+@-webkit-keyframes closing-menu {
+	0% {  z-index: 11; opacity: 1; }
+	99% { z-index: 11; opacity: 0; }
+	100% { z-index: -1; opacity: 0;  }
+}
+@-moz-keyframes closing-menu {
+	0% {  z-index: 11; opacity: 1; }
+	99% { z-index: 11; opacity: 0; }
+	100% { z-index: -1; opacity: 0;  }
+}
+@keyframes closing-menu {
+	0% {  z-index: 11; opacity: 1; }
+	99% { z-index: 11; opacity: 0; }
+	100% { z-index: -1; opacity: 0;  }
+}
+
+  
+#mobile-header {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 50px;
+	padding: 12px 0px;
+	background-color: #323232;
+	z-index: 10;
+	@include transform(translate(0,0));
+	@include transition-property(background-color, transform);
+	@include transition-duration($xspeed);
+  -webkit-backface-visibility: hidden;    
+  backface-visibility: hidden;
+  
+	&.detached {
+		position: fixed;
+		@include transition-property(transform);
+		@include transition-duration($xspeed)
+	}
+  
+	&.header-hiding {
+		@include transform(translate(0, -50px));    
+	}
+  
+	@include susy-breakpoint($big, $big-layout){
+		display: none;
+	}   
+    h1 {
+    	margin-top: -2px;
+    }
+//	.svg-logo { fill: #000; }
+	.svg-menu-burger { fill: #000; }
+}
+
+
+//overriding theming of header based on page
+.page-landing-pages,
+.node-type-article,
+.node-type-the-daily,
+.node-type-page,
+.page-content-by-type,
+.front,
+.page-search {
+  
+  #mobile-header {
+    background-color: #f1f1f1;
+    
+  	.drawer-toggle {
+  		background-image: url("../img/icons/menu-expand-black.svg");
+  	}
+  }
+
+	.svg-logo { fill: #000; }
+	.svg-menu-burger { fill: #000; }
+}
+
+.node-type-video {
+	.svg-logo { fill: #fff; }
+}
+
+
+
+@-webkit-keyframes show-header { from { @include transform(translate3d(0,-60px,0)) } to { @include transform(translate3d(0,0,0)) }}
+   @-moz-keyframes show-header { from { @include transform(translate3d(0,-60px,0)) } to { @include transform(translate3d(0,0,0)) }}
+        @keyframes show-header { from { @include transform(translate3d(0,-60px,0)) } to { @include transform(translate3d(0,0,0)) }}
+
+@-webkit-keyframes hiding-header { from { @include transform(translate3d(0,0px,0)) } to { @include transform(translate3d(0,-60px,0)) }}
+   @-moz-keyframes hiding-header { from { @include transform(translate3d(0,0px,0)) } to { @include transform(translate3d(0,-60px,0)) }}
+        @keyframes hiding-header { from { @include transform(translate3d(0,0px,0)) } to { @include transform(translate3d(0,-60px,0)) }}
+
+
+
+
+.blurred {
+	@include transition-property(filter);
+	@include transition-duration(0.5s);
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
+}
+
+
+.front,
+.page-landing-pages,
+.section-magazine{ 
+  #header {
+  	
+    
+  	@include susy-breakpoint($big, $big-layout) {
+	  	@include transition-property(background-color);
+	  	@include transition-duration(0.75s);
+	  	background-color: #ffffff;
+  		&:hover {
+  			background-color: #ffffff;
+  		}
+	  }
+  }
+}
+
+.section-content-by-type	 {
+	#header {
+		padding-bottom: 60px;
+		@include susy-breakpoint($big, $big-layout) {
+		background-color: #fff;
+	}
+		
+	}
+}
+
+#overflow-wrapper {
+  width: 100%;
+
+} 
+
+
+#header {
+	display: block;
+	margin-top: 50px;
+  
+	h1 { display: none; } 
+    .page-landing-pages #header h1 { display: block; }
+	
+	@include susy-breakpoint($big, $big-layout) {
+		margin-top: 0px;
+		display: block;
+		position: relative;
+		overflow: hidden;
+		font-family: $gotham-ssa;
+		text-align: center;
+		padding-top: 20px;
+		margin-bottom: 2.34375vw;
+		margin-left:0px;
+
+		h1 { display: block; }
+	} 
+}
+  
+  
+ 
+
+  
+#main {
+//	opacity:0;
+	@extend .wrapper;
+	position: relative;
+	-webkit-overflow-scrolling: touch;
+ 	 -webkit-transform-style: preserve-3d;
+  
+	@include susy-breakpoint($big, $big-layout){
+		margin-top: inherit;
+	} 
+}
+
+
+.drawer-closed {
+	#drawer{
+		pointer-events: none;
+		-webkit-animation: none;
+		-moz-animation: none;
+		-ms-animation: none;
+		-o-animation: none;
+		animation: none;
+		-webkit-transition: none;
+		-moz-transition: none;
+		-ms-transition: none;
+		-o-transition: none;
+		transition: none;
+		
+		&.closing-menu {
+			@include animation(closing-menu, 0.5s, ease-in);
+		}
+	
+		@include susy-breakpoint($big, $big-layout) {
+			&.closing-menu {
+				opacity: 1;
+			}
+		
+			pointer-events: auto;
+			opacity: 1;
+		}
+	}
+	
+	
+	@include susy-breakpoint($big, $big-layout) {
+		#drawer:hover .drawer-toggle {
+			opacity: 1;
+		}
+	}
+} 
+
+
+.drawer-open { 
+  overflow: hidden;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  width: 102%;
+  backface-visibility: hidden;
+  position: fixed;
+	@include susy-breakpoint($big, $big-layout) {
+		@include transform(translateX(455px));
+		position: static;
+	}
+    
+	@include susy-breakpoint($bigger, $bigger-layout) {
+		@include transform(translateX(540px))
+	}
+    
+	#scroller {
+		
+		@include susy-breakpoint($bigger, $bigger-layout) {
+			position: static;
+		}
+		&::after {
+			pointer-events: auto;
+			opacity: 1;
+			@include single-transition(opacity, 0.5s, ease-in-out);
+		}
+	}
+
+	#drawer {
+		overflow: hidden;
+		.drawer-container {
+			overflow-y: scroll;
+			
+			.drawer-toggle {
+				background-image: url('../img/icons/menu-collapse.svg');
+    
+				@include susy-breakpoint($big, $big-layout) {
+					margin-right: -11px;
+  
+					&:hover {
+						opacity: 1;
+					}
+				}
+			}
+		}
+		
+		.drawer-contents {
+			
+
+			visibility: visible;   
+			opacity: 1;
+    
+			a,
+			.expand-link,
+			.drawer-search-field,
+			.drawer-search-submit { pointer-events:auto; }
+			
+			
+		}
+  
+		#drawer-breadcrumb,
+		#drawer-breadcrumb.showing {
+			opacity: 0;
+		}
+		
+		
+		display: block;
+		z-index: 11;    		
+		@include animation(opening-menu, 0.5s, ease-in);
+      
+		@include susy-breakpoint($big, $big-layout) {
+			-webkit-animation: none;
+			-moz-animation: none;
+			-ms-animation: none;
+			-o-animation: none;
+			animation: none;
+		}
+	}
+
+	#site-wrapper {
+		@include susy-breakpoint($big, $big-layout){
+			overflow: hidden;
+		}
+	}
+}  
+
+
+#homepage-footer {
+ margin-top: 75px;
+ margin-bottom: 2.34375vw; 
+}
+
+
+
+.pager {
+  float: left;
+  width: 100%;
+  margin: 30px auto 60px;
+  color: #ccc;
+  font-family: $gotham-ssa;
+  font-weight: 300;
+  list-style: none;
+  text-align: center;
+  
+  li {
+    display: inline;
+    margin-left: 15px;
+  
+    &:first-child{ margin: 0; }
+  }
+  
+   a:hover { color: #999; }
+ 
+   .pager-item,
+   .pager-current {
+     display: none;
+     
+       	@include susy-breakpoint($big, $big-layout){
+          display: inline;
+        }
+   }
+
+  .control-pager,
+  .pager-previous,
+  .pager-next {
+    a {
+        position: relative;
+        display: inline-block;
+        background-repeat: no-repeat;
+        background-size: contain;
+        text-indent: -9999px;
+    }
+  }
+  
+  
+  .pager-first,
+  .pager-last {
+    display: none;
+    
+  	@include susy-breakpoint($big, $big-layout){
+      display: inline;
+    
+    a {
+        top: -3px;
+        height: 40px;
+        width: 50px;
+        background-image: url('../img/icons/pager-arrow.svg');
+    	}
+    }
+  }
+
+  .pager-next,
+  .pager-previous {
+    
+    a {
+      width: 20px;
+      height: 40px;
+      background-image: url('../img/icons/prev-next-arrow.svg');
+    }
+
+    
+  	@include susy-breakpoint($big, $big-layout){
+      display: none;
+  	}
+  }
+  
+  .pager-previous { float: left; margin-left: 28px; }
+  .pager-next { float: right; margin-right: 28px;}
+
+  .pager-first a,
+  .pager-previous a{
+    @include transform(rotateY(180deg))
+  }
+
+  .pager-current {
+    color: #999;
+    padding: 13px 20px;
+    border: 1px solid #999;
+    font-weight: inherit;
+  }
+}

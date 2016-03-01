@@ -1,0 +1,642 @@
+$node-element-bottom-padding: 80px;
+
+/////// GENERAL CONTENT PAGE STYLES
+.page-node {
+  #header { display: none; }
+  
+  #main { 
+	  opacity: 1;
+	  padding-bottom: 0; }
+  
+  @include susy-breakpoint($big, $big-layout) {
+    #header{
+      display: block;
+      opacity: 0;
+      @include transform(translate3d(0,25px,0));
+    }
+  
+    svg {
+      width: 131px;
+      height: 28px;
+    }
+  }
+}
+
+
+
+
+
+// Editorial Page Transitions
+// Taking care of all node-load transitions except for features and subscribe pages
+.page-node:not(.node-type-feature):not(.section-subscribe):not(.section-magazine) {
+  #header{
+  	@include animation(translate-in, 0.3s, ease);
+  }
+  
+	.node-title {
+		@include transform(translate3d(0,40px,0));
+		@include animation(translate-in, 0.3s, ease);
+	}
+
+	.commitment,
+	.overlay-commitment,
+	#share-reveal-hide-button,
+	.overlay-commitment  {
+		@include transform(translate3d(0,70px,0));
+		@include animation(translate-in-to-0196, 0.3s, ease);
+	}
+
+	.header-social .share-button,
+	.share-buttons .share-button {
+		@include transition-property(opacity);
+		@include transition-duration(.3s);
+		@include transition-timing-function(ease);	
+	}
+  
+	.header-social .share-button a:hover,
+	.share-buttons .share-button a:hover {
+		opacity: 1;
+	}
+}
+
+
+
+
+
+
+
+
+
+.page-node:not(.node-type-the-daily):not(.section-subscribe ):not(.section-magazine) {
+	.header-logo {
+		text-align: left;
+    	background-position: left;
+		  
+		@include susy-breakpoint($big, $big-layout) {
+			@include span(7 of 12);
+		}
+	
+		@include susy-breakpoint($bigger, $bigger-layout) {
+			@include pre(1 of 12);
+			@include span(6 of 12);
+		}
+	}
+  
+	.header-subscribe {
+		@include susy-breakpoint($bigger, $bigger-layout) {
+			@include post(1);
+		}
+	}
+}
+
+
+.node-type-gallery,
+.node-type-video {
+  color: #ccc;
+    
+  .svg-logo {
+    fill: #f4f4f4;
+  }
+  
+  .node-title {
+    color: #f4f4f4;
+	}
+	
+  hr {
+    height: 1px;
+    border: 0;
+    background: #464646;
+  }
+  
+	.byline{
+		color: #ffffff;
+	}
+}
+
+
+
+//.node-type-gallery,
+//.node-type-video,
+//.node-type-article {
+//  .overlay-commitment {
+//    margin: 0px 0 2.1em;
+//    display: inline-block;
+////    float: left;
+//  }
+//}
+
+
+
+
+.node-title {
+  margin-bottom: 14px;
+  opacity: 0;// just added
+  font-family: "freight-display-pro",serif;
+    font-size: 1.8em;
+  line-height: 1;
+  font-weight: 500;
+  
+  @include susy-breakpoint($big, $big-layout) {
+    font-size: 2.4em;
+  }
+  @include susy-breakpoint($bigger, $bigger-layout) {
+    font-size: 2.8em;
+  }
+}
+
+
+.node-header {
+  
+   margin-bottom:14px;
+   margin-top: 112px;
+    @include susy-breakpoint($big, $big-layout) {
+		 margin-top: 62px;
+	}
+  @include susy-breakpoint($bigger, $bigger-layout) {
+ margin-top: 42px;
+	  @include pre(1 of 12);
+	  @include span(10 of 12);
+  }  
+  
+  .commitment,
+  .overlay-commitment {
+	  margin-top: 0;
+    opacity: 0;
+  }
+  
+  .share-buttons {
+	      @include transition-property(all);
+	      @include transition-duration(0.3s);
+	      @include transition-timing-function(ease-out);
+    opacity: 0;
+	height: 0;
+  margin-top: 0px;
+  margin-bottom: 24px;
+  overflow-y: hidden;
+  @include susy-breakpoint($bigger, $bigger-layout) {
+	  margin-bottom: 10px;
+  
+  }
+  
+  }
+  
+//  @include susy-breakpoint($big, $big-layout) {
+//	  .share-buttons {
+//		  margin-top: 26px;
+//		  margin-top: 26px;
+//
+//		  li:last-child a img { padding-right: 0; }
+//	  }
+//  }  
+}	
+
+
+
+.byline {
+  opacity: 0;
+  color: #000000;
+  font-family: 'Gotham SSm A', 'Gotham SSm B', "Trebuchet MS", Arial, sans-serif;
+  font-size: 16px;
+  font-size: 0.8em;
+  margin-bottom: 14px;
+//  opacity: 0.196; just added
+  padding-bottom: 17px;
+  border-bottom: 1px solid #999999;
+	@include transform(translate3d(0,55px,0));
+	@include animation(translate-in-to-0196, 0.3s, ease);
+}
+
+#editorial-body {
+  float: left;
+  width: 100%;
+  margin-bottom: 140px;
+}
+
+
+.editorial-copy {
+	margin-bottom: $node-element-bottom-padding;
+	&:first-child { margin-top: 0; }
+	
+	@include span(12);
+	//    @include susy-breakpoint($big, $big-layout) {
+		//  //  margin-bottom: 140px;
+		//      @include pre(1);
+		//    @include span(10 of 12);
+		//    }
+  
+	@include susy-breakpoint($bigger, $bigger-layout) {
+		@include pre(1);
+		@include span(7 of 12);
+	}
+
+	p { 
+		margin: 1.6em auto;
+		&:first-child { margin-top: 0; }
+		&:last-child { margin-bottom: 0; }
+	}
+}
+
+.node-type-video .editorial-copy,
+.node-type-gallery .editorial-copy {
+	&:last-child { margin-bottom: 0; }
+	margin-bottom: 40px;
+}
+
+
+  .editorial-info {
+   @include span(12);
+      color: #666;
+      font-size: 1em;
+   line-height: 1.6;
+ 
+   @include susy-breakpoint($bigger, $bigger-layout) {
+     @include pre(1);
+     @include span(last 11 of 12)
+   }
+    
+      dt { 
+          float: left;
+          clear: left;
+          margin-right: 5px;
+      }
+    
+      dd {
+          float: left;
+          clear: right;
+  //        font-weight: 700;
+      }
+  }
+  
+  .editorial-info-small {
+  	font-size: .6em;
+  	color: #666;
+  }
+  .editorial-info-medium {
+  	font-size: .8em;
+  	color: #666;
+  }
+
+
+
+/////////////////////////////////////////////////////
+//=Image Styles 
+///////////////////////////////////////////////////// 
+// 10 Column
+.standard-image,
+.standard-video {
+	@include span(12);
+	margin-bottom: $node-element-bottom-padding;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+	@include susy-breakpoint($bigger, $bigger-layout){
+		@include span(10);
+		@include pre(1); 
+  }
+  
+  .credits {
+  	margin-top: 10px;
+  }
+  
+  & + .copy-block {
+  	padding-top: 98px;
+  }
+}
+
+
+// 12 Column
+.full-width-image,
+.full-width-video {
+	@include span(12);
+	margin-bottom: $node-element-bottom-padding;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  
+	@include susy-breakpoint($big, $big-layout) {
+	}
+	
+	@include susy-breakpoint($bigger, $bigger-layout) {
+	}
+  
+  .credits {
+  	margin-top: 10px;
+  	margin-bottom: 0px;
+  }
+}
+
+
+// Full Bleed
+.full-bleed-image { 
+  box-sizing: content-box;
+  width: 106.67%;
+  margin-left: -10px;
+	margin-bottom: $node-element-bottom-padding;
+  overflow: auto;
+  @include susy-breakpoint($big, $big-layout) {
+    width: 104.94%;
+    margin-left: -2.5%;
+  }
+
+
+
+  .credits {
+  	margin-top: 10px;
+  	margin-left: 2.6%;
+  	margin-bottom: 0px;
+  }
+}
+
+
+.full-bleed-video {
+	width: 105.2%;
+	margin-left: -2.6%;
+	margin-bottom: $node-element-bottom-padding;
+//  @extend .contain;
+position: relative;
+overflow: hidden;
+z-index: 1;
+
+  .credits {
+  	margin-top: 10px;
+  	margin-left: 2.6%;
+  	margin-bottom: 0px;
+  }
+
+  & + .copy-block {
+  	padding-top: 28px;
+  	padding-bottom: 144px;
+  }
+}
+
+
+// Image Gallery
+.story-slider-container,
+.caption-slider {	
+  @include susy-breakpoint($bigger, $bigger-layout) {
+    @include pre(1);
+    clear: both;
+  }
+}
+
+.story-slider-container .credits {
+	margin-bottom: 80px;
+}
+ 
+/////////////////////////////////////////////////////
+//=Article Styles 
+///////////////////////////////////////////////////// 
+.node-type-article {
+  #editorial-body {
+    // TODO do we need this? it stops a <p> from not lining up if there is an add next to it
+    div:first-child { margin-top: 0; }
+
+  }
+  
+   .portrait-image,
+   .portrait-video {
+    @include span(12);
+    margin-bottom: $node-element-bottom-padding;
+	.credits {
+		margin-top: 10px;
+	}
+    @include susy-breakpoint($big, $big-layout) {
+//  	@include pre(1);
+//      @include span(10);
+  	}
+	
+    @include susy-breakpoint($bigger, $bigger-layout) {
+  	@include pre(1); 
+      @include span(7);
+  	}
+  }
+}
+
+
+/////////////////////////////////////////////////////
+// Daily Styles 
+/////////////////////////////////////////////////////
+.node-type-the-daily {
+  .header-logo { 
+    width: 33%;
+    
+    a {
+      margin: 0 auto;
+    }
+	}
+  
+  //TODO does this need to be nested
+  .daily-ribbon {
+  	margin-top: 100px;
+  	margin-bottom: 30px;
+  }
+}
+ 
+.daily-title {
+  margin-top: 100px;
+  margin-bottom: 44px;
+  font-size: 40px;
+  font-family: $gotham-ssa;
+  font-weight: 200;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.2;
+  @include susy-breakpoint($big, $big-layout) {
+
+	  margin-top: 60px;	
+  }
+  @include susy-breakpoint($bigger, $bigger-layout) {
+    font-size: 60px;
+  }
+}
+
+.daily {
+
+  .daily-calendar {
+    margin-bottom: 41px;
+    font-family: $gotham-ssa;
+    text-align: center;
+	font-weight: 400;
+  }
+}
+
+.daily-node-image {
+  @include span(12);
+  margin-bottom: 80px;
+  
+  img {
+    height: auto;
+  }
+  
+  figcaption {
+	  margin-top: 10px;
+  }
+}
+
+
+.daily-body {
+  opacity: 0;
+  @include transform(translate3d(0,85px,0));
+  @include animation(translate-in, 0.3s, cubic-bezier(0.165, 0.84, 0.44, 1));
+  
+  @include susy-breakpoint($big, $big-layout) {
+    	@include pre(1);
+    	@include span(10 of 12);
+  }
+  
+  @include susy-breakpoint($bigger, $bigger-layout) {
+    	@include pre(2);
+
+    	@include span(8 of 12);
+  }
+}
+
+
+/////////////////////////////////////////////////////
+// Video Styles 
+///////////////////////////////////////////////////// 
+.video-piece {
+   float: left;
+   position: relative;
+   width: 300px;
+   overflow: hidden;
+   z-index: 1;
+   margin-bottom: $node-element-bottom-padding;
+   
+   @include susy-breakpoint($big, $big-layout) {
+     width: 100%;
+   }
+} 
+
+#video-overlay {
+  display: none;
+  
+  @include susy-breakpoint($big, $big-layout) {
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+} 
+
+
+
+
+/////////////////////////////////////////////////////
+// Issue Styles 
+///////////////////////////////////////////////////// 
+.issue-node-cover {
+  margin-top: 48px;
+  @include susy-breakpoint($big, $big-layout) {
+    @include pre(1 of 12);
+    @include span(5 of 12);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+/////////////////////////////////////////////////////
+//=Footer Styles 
+///////////////////////////////////////////////////// 
+#footer {
+  position: relative;
+  float: left;
+  width: 100%;
+  height: 377px;
+	box-sizing: content-box;
+	padding-right: 10px;
+	padding-left: 10px;
+	margin-left: -10px;
+	margin-right: -10px;
+  color: #fff;
+	font-family: 'Gotham SSm A', 'Gotham SSm B';
+  background-size: cover;
+  
+	@include susy-breakpoint($big, $big-layout) {
+    margin-left: -(gutter());
+    padding: 0 2.47%;
+    background-size: 100%;
+    @include transition-property(margin-top);
+    @include transition-duration(0.3s);
+	}
+}
+
+
+.footer-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+//	padding: 0 10px;
+  	@include transition-property(background-color);
+  	@include transition-duration(0.5s);
+	background-color: rgba(0,0,0,0.6);
+	&:hover {
+		background-color: rgba(0,0,0,0.7);
+	}
+  
+	@include susy-breakpoint($bigger, $bigger-layout) {
+		height: 377px;
+	} 
+}
+  
+  
+.footer-bottom {
+	
+	opacity: 1;
+	position: absolute;
+	bottom: 40px;
+	margin-left: 2.34375%;
+    
+	@include susy-breakpoint($bigger, $bigger-layout) {
+		 padding-left: gutter();
+    	  @include pre(1 of 12);
+    	  @include span(10 of 12);
+//		padding-right:10%;
+	} 
+}
+
+.next-up {
+  opacity: 0;
+  margin-top: 40px;
+  margin-bottom: 0;
+  font-size: 18px;
+  font-size: 0.8em;
+  text-transform: uppercase;
+  font-weight: 200;
+  margin-left: 2.34375%;
+  opacity: 0.25;
+  -webkit-font-smoothing: subpixel-antialiased;
+	@include susy-breakpoint($bigger, $bigger-layout) {
+	 padding-left: gutter();
+		
+    	  @include pre(1 of 12);
+    	  @include span(10 of 12);
+//		padding-right:10%;
+	} 
+}
+  .next-up-link {
+    display: block;
+  }
+
+.next-up-breadcrumb {
+  margin-top: 0;
+  // TODO does this match other breadcrumbs?
+  margin-bottom: 10px;
+	text-transform: uppercase;
+	font-size: 0.8em;
+	font-weight: 200;
+	opacity: 0.5;
+	-webkit-font-smoothing: subpixel-antialiased;
+}

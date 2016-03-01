@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Mojeh Features feature.
+ */
+
+include_once 'mojeh_features.features.inc';

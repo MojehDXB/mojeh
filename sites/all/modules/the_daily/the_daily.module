@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the The Daily feature.
+ */
+
+include_once 'the_daily.features.inc';

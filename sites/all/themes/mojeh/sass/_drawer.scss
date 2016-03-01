@@ -1,0 +1,486 @@
+/////////////////////////////////////////////////////
+//=Drawer Shizzzz
+///////////////////////////////////////////////////// 
+//.drawer-scroller {
+//  top: 0;
+//  left: 0;
+//  height: 100%;
+//  overflow: hidden;
+//  display: block;
+//  -webkit-backface-visibility: hidden;
+//  backface-visibility: hidden;
+//
+//
+//}
+
+
+.drawer-container {
+  width: 100%;
+  padding: 12px 20px 10px 12px;
+  
+  @include susy-breakpoint($big, $big-layout) {
+	  padding: 21px 30px;
+    width: 500px;
+  }
+  
+	@include susy-breakpoint($bigger, $bigger-layout) {
+    width: 600px;
+  }
+}
+
+
+.drawer-header {
+	float: left;
+	width: 100%;
+	clear: both;
+	margin-bottom:49px;
+  -webkit-backface-visibility: hidden;    
+  backface-visibility: hidden;
+
+	.svg-logo { fill: #757575; }
+}
+  
+.drawer-title {
+	display: block;
+	margin-top: 3px;
+	text-indent: -9999px;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	background: url("../img/logos/MOJEH-white.png") no-repeat transparent left top;
+	width: 130px;
+	float: left;
+	@include susy-breakpoint($big, $big-layout) {    
+		margin-top: -1px;
+	}
+    
+	svg {
+		//		visibility: hidden;
+		float: left;
+    
+		@include susy-breakpoint($big, $big-layout) {      
+			width: 138px;
+			height: 28px;
+		}
+	}
+}
+
+.drawer-contents {
+	@include susy-breakpoint($big, $big-layout) {
+    float: left;
+		opacity: 0;
+		@include transition-property(opacity);
+		@include transition-duration(0.4s);
+		@include transition-timing-function(ease-in-out);
+    -webkit-backface-visibility: hidden;    
+    backface-visibility: hidden;
+		a,
+		.expand-link,
+		.drawer-search { pointer-events:none; }
+	}
+}
+
+
+.drawer-search {
+	position: relative;
+	display: inline-block;
+	width: 100%;
+}
+.drawer-search-field {
+	background: transparent;
+	width: 100%;
+	height: 50px;
+	border: 0;
+	border-bottom: 1px solid #3b3b3b;
+	margin-bottom: 41px;
+	border-radius: 0;
+	color: white;
+	font-family: 'Gotham SSm A', 'Gotham SSm B';
+	font-size: 19px;
+	font-weight: 200;
+
+	
+  
+	@include susy-breakpoint($big, $big-layout) {
+		box-sizing: content-box;
+		height: 70px;
+		@include transition-property(all);
+		@include transition-duration(0.2s);
+		@include transition-timing-function(ease-in)
+	}
+
+
+}
+
+.drawer-search-field { 
+
+	@include transition-property(color);
+	@include transition-duration(0.2s);
+	@include transition-timing-function(ease-in);
+	outline: none; 
+}
+.drawer-search-field:hover::-webkit-input-placeholder { 
+	@include transition-property(color);
+	@include transition-duration(0.2s);
+	@include transition-timing-function(ease-in);
+	color: #fff; }
+.drawer-search-field:focus { color: #fff; border-color: #fff; }
+.drawer-search-field:focus::-webkit-input-placeholder { 
+	@include transition-property(color);
+	@include transition-duration(0.2s);
+	@include transition-timing-function(ease-in);
+	color: #757575; }
+
+
+.drawer-search-submit {
+
+	@include transition-property(opacity);
+	@include transition-duration(0.2s);
+	@include transition-timing-function(ease-in); 
+	background: url("../svg/search.svg") no-repeat transparent center center;
+	opacity: .2;
+	background-size: 25px;
+	display: block;
+	height: 45px;
+	width: 45px;
+	outline: 0;
+	border: 0;
+	position: absolute;
+	right: -10px;
+	padding: 10px;
+	top: 0;
+	
+	@include susy-breakpoint($big, $big-layout) { top: 10px; }
+}
+
+.drawer-search-submit:hover {
+	cursor: pointer;
+	opacity: 1;
+}
+
+
+// TODO: Change global rule to a local one for input
+input::-webkit-input-placeholder { color: #757575; }
+          input:-moz-placeholder { color: #757575; }
+
+
+#main-menu {
+  float: left;
+  width: 100%;
+	margin-bottom: 99px;
+	margin-top:-10px;
+}
+
+
+.main-menu-item {
+	@include transition-property(margin-top);
+	@include transition-duration(0.5s);
+	position: relative;
+	width: 100%;
+	min-height: 56px;
+	margin-top: -2px;	
+	font-size: 29px;
+	color: #757575;
+	text-transform: uppercase;
+	list-style: none;
+//	background-color:#252525;
+
+	@include susy-breakpoint($big, $big-layout) {
+		background-color: #252525;
+		font-size: 39px;
+	} 
+   
+	&.active .main-menu-link { color: #fff; } 
+    
+	&:last-child .sub-menu {
+		margin-bottom:22px;
+	}
+}
+
+
+.main-menu-link {
+	position: absolute;
+	width: auto;
+	color: #757575;
+	z-index: 11;
+  
+	&:hover { 
+		color: #fff;
+	}
+}
+
+.expand-link {
+	text-indent: -9999px;
+	width: 100%;
+	height: 58px;
+	display: block;
+	cursor: pointer;
+	opacity: 0.2;
+	z-index: 1;
+  
+	&:hover {
+		@include transition-property(opacity);
+		@include transition-duration(0.2s);
+		@include transition-timing-function(ease-in);
+		opacity: 1;
+	}
+}
+
+.expand-link-arrow{
+	display: block; 
+	float:right;
+	height: 13px;
+	width: 24px;	
+	padding: 5px 0 25px 25px;
+	background: url('../svg/arrow-expand.svg') no-repeat transparent center;
+	z-index: 2;
+	@include transition-property(rotate);
+	@include transition-duration(0.5s);
+//	background-break@include transition-delay(0.5s);
+
+
+
+	@include susy-breakpoint($big, $big-layout) {
+		margin-top: 23px;
+	}
+
+	&.expanded {
+		@include transition-property(rotate);
+		@include transition-duration(0.5s);
+//		@include transition-delay(0.5s);
+		@include rotate(-180deg);
+	}
+	
+
+}
+
+
+.sub-menu {
+	@include transition-property(max-height, opacity, margin);
+	@include transition-duration(0.5s,0.5s,0.5s);
+	font-size: 19px;
+	list-style: none;
+//	max-height: 0px;
+	overflow: hidden;
+	margin: 0px 0px 0px 0px;
+	opacity: 0;
+	position: absolute;
+	width:100%;
+//	background-color:#252525;
+//	display: none;
+	
+	&.open {
+//		@include transition-property(max-height, opacity);
+//		@include transition-duration(2s,0.2s);
+//		display: none;
+//		max-height: 100px;
+     	margin: 14px 0px 24px 0px;
+		opacity: 1;
+		overflow: hidden;
+	}
+
+}  
+
+
+.sub-menu-item {
+	font-weight: 300;
+	padding-bottom: 10px;
+  
+  a {
+  	color: #5e5e5e;
+	padding: 8px 0px;
+  }
+  
+  &.active a,
+  a:hover {
+    color: #fff;
+  }
+}
+
+
+
+
+
+
+#type-filter {
+
+	@include transition-property(margin-top);
+	@include transition-duration(0.5s);
+  float: left;
+  width: 100%;
+	padding-top: 28px;
+	padding-bottom: 28px;
+	border-top: 1px solid #3b3b3b;
+	border-bottom: 1px solid #3b3b3b;
+	margin-bottom: 69px;
+	overflow: auto;
+	font-weight: 400;
+}
+
+%type-filter-item {
+	float: left;
+	width: 33%;
+	padding: 8px 0;
+	border-left: 1px solid #3b3b3b;
+	list-style: none;
+	&:first-child{ border-left: none; }
+  
+  
+	a {
+		display: block;
+		padding-top: 31px;
+		color: #fff;
+		font-size: 14px;
+		text-align: center;
+		text-transform: uppercase;
+		opacity: 0.4;
+		background-repeat: no-repeat;
+		background-position: center top;
+    background-size: 24px 18px;
+    
+		&:hover { opacity: 1;}
+	}
+}
+
+
+
+// Set the transition of all over states
+// TODO move this somewhere else
+a {
+	@include transition-property(all);
+	@include transition-duration(0.2s);
+	@include transition-timing-function(ease-in);
+}
+
+.tf-features {
+	@extend %type-filter-item;
+	a { 
+		background-image: url('../img/icons/icon-feature-white.svg'); 
+	}
+}
+
+.tf-videos {
+	@extend %type-filter-item;
+	a { 
+		background-image: url('../img/icons/icon-video-white.svg'); 
+	}
+}
+  
+.tf-galleries {
+	@extend %type-filter-item;
+	a { 
+		background-image: url('../img/icons/icon-gallery-white.svg'); 
+	}
+}
+
+
+
+
+
+
+.drawer-social {
+	width:100%;
+	float: left;
+	margin-bottom: 94px;
+	text-align: center;
+	padding: 0 28px;
+  
+  .social-medias {
+  	width: 100%;
+  	margin: 20px 0px;
+  }
+  
+	.facebook,
+	.twitter,
+	.instagram,
+	.vimeo,
+	.google-plus {
+		list-style: none;
+		display: inline-block;
+		text-align: center;
+  		width: 25%;
+        
+   	 a:hover img { opacity: 1; }
+        
+   	 img { 
+		width: 25px;
+		height: 25px;
+		margin: 0 auto;
+		opacity: 0.2;
+		}
+	}
+}
+
+.social-media-title {
+	margin-bottom: 54px;
+	color: $dark-grey;
+	font-size: 19px;
+}
+
+ 
+  
+
+#other-links {
+	float: left;
+	width: 100%;
+  padding-bottom: 114px;
+	font-family: $freight-text;
+	font-size: 20px;
+  
+	li {
+		float: left;
+		width: 20%;
+    text-align: center;
+    list-style: none;
+	}
+  
+	a { color: $med-grey; }
+}
+
+
+
+
+// Drawer Interactions
+.drawer-toggle {
+//  position: absolute;
+//  top: 0;
+//  right: 0;
+float: right;
+margin-top: -14px;
+margin-right: -10px;
+position:relative;
+	width: 70px;
+	height: 50px;
+	
+	cursor: pointer;
+	text-indent: -9999px;
+	background-image: url('../img/icons/menu-expand.svg');
+	background-position: 36px center;
+	background-repeat: no-repeat;
+	background-size: 25px 20px;
+	
+	opacity: 0.25;
+	@include transition-property(background-image, margin-right, opacity);
+	@include transition-duration($xspeed, 0.2s, 0.2s);
+
+	@include susy-breakpoint($big, $big-layout) {
+		background-position: center center;
+		width: 45px;
+		height: 45px;
+		padding-top: 0;
+		padding-right: 0;
+    	margin-right: -30px;
+		margin-top: -10px;
+		&:hover {
+			opacity: 1;
+		}
+	}
+	
+	@include susy-breakpoint($bigger, $bigger-layout) {
+		margin-right: -22px;
+	} 
+} 
+  
+
+
+
+

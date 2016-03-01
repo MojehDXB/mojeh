@@ -1,0 +1,16 @@
+name = The Daily
+core = 7.x
+package = Mojeh
+dependencies[] = features
+dependencies[] = image
+dependencies[] = mojeh_features
+dependencies[] = options
+dependencies[] = taxonomy
+dependencies[] = text
+features[features_api][] = api:2
+features[field_instance][] = node-the_daily-body
+features[field_instance][] = node-the_daily-field_blurb
+features[field_instance][] = node-the_daily-field_category
+features[field_instance][] = node-the_daily-field_image
+features[field_instance][] = node-the_daily-field_sub_category
+features[node][] = the_daily

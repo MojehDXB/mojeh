@@ -1,0 +1,7 @@
+header nav, footer, #drawer {
+display: none;
+}
+
+.slides .slide {
+  opacity: 1!important;
+}

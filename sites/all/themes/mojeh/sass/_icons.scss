@@ -1,0 +1,120 @@
+/////////////////////////////////////////////////////
+// Commitment Icons 
+/////////////////////////////////////////////////////
+// <p class="commitment"><i class="video-commitment"></i>2:13</p>
+
+
+
+.commitment,
+.overlay-commitment {
+	font-size: 0.8em;
+	font-family: 'Gotham SSm A', 'Gotham SSm B';
+	margin-top: 1.0625em;
+	&.no-text {
+		line-height: 1;
+	}
+}
+
+.commitment-icon {
+	display: inline-block;
+	width: 24px;
+	height: 18px;
+	margin-right: 10px;
+	background-repeat: no-repeat;
+	background-position: left center;
+  background-size: 24px 18px;
+	vertical-align:middle;
+	margin-top: -3px;
+}
+
+
+
+.commitment,
+.overlay-commitment {
+	display: inline-block;
+	opacity:0.196;
+	position:relative;
+	color: #000;
+	-webkit-font-smoothing: subpixel-antialiased;
+//	background:blue;
+
+	// Grey Icons
+	.article-commitment { 
+		@extend .commitment-icon;
+		background-image: url("../img/icons/icon-article-black.svg");
+	}
+
+	.feature-commitment { 
+		@extend .commitment-icon; 
+		background-image: url("../img/images/icons/icon-feature-black.svg");
+	}
+
+	.gallery-commitment { 
+		@extend .commitment-icon; 
+		background-image: url("../img/icons/icon-gallery-black.svg");
+	}
+
+	.video-commitment { 
+		@extend .commitment-icon; 
+		background-image: url("../img/icons/icon-video-black.svg");
+	}
+}
+
+.commitment {
+	font-weight: 300;
+}
+
+.overlay-commitment {
+	font-weight: 200;
+	
+}
+
+
+%white-commitment {
+	color: #fff;
+	position:relative;
+	font-weight: 200;
+	// White Icons
+	.article-commitment { 
+		@extend .commitment-icon; 
+		background-image: url("../img/icons/icon-article-white.svg");
+	}
+	.feature-commitment { 
+		@extend .commitment-icon; 
+		background-image: url("../img/icons/icon-feature-white.svg");
+	}
+
+	.gallery-commitment { 
+		@extend .commitment-icon; 
+		background-image: url("../img/icons/icon-gallery-white.svg");
+	}
+
+	.video-commitment { 
+		@extend .commitment-icon; 
+		background-image: url("../img/icons/icon-video-white.svg");
+	}
+}
+
+
+
+.footer-commitment {
+  @extend %white-commitment;
+}
+
+.overlay-commitment {
+	@extend %white-commitment;
+	opacity:0.196;
+}
+
+.overlay-story-commitment {
+  @extend %white-commitment;
+  font-size: 0.8em;
+  -webkit-font-smoothing: subpixel-antialiased;
+	display: inline-block;
+	position:relative;
+	font-weight: 200;
+	margin-top: 17px;
+	opacity: 0.5;
+}
+
+

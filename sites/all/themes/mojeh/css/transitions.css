@@ -1,0 +1,1573 @@
+/* line 43, ../sass/_variables.scss */
+.wrapper {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin: 0 10px;
+}
+/* line 12, ../../../../../../../../../../../Users/andrew/.rvm/gems/ruby-1.9.3-p545/gems/susy-2.1.2/sass/susy/output/support/_clearfix.scss */
+.wrapper:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+@media (min-width: 600px) {
+  /* line 43, ../sass/_variables.scss */
+  .wrapper {
+    margin: 0 2.34375%;
+  }
+}
+@media (min-width: 1024px) {
+  /* line 43, ../sass/_variables.scss */
+  .wrapper {
+    margin: 0 2.34375%;
+  }
+}
+
+/* line 58, ../sass/_variables.scss */
+.contain {
+  display: inline-block;
+}
+/* line 61, ../sass/_variables.scss */
+.contain:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+/* line 4, ../sass/transitions.scss */
+/*body {
+  -moz-transition-property: -moz-transform;
+  -o-transition-property: -o-transform;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: transform;
+  -moz-transition-duration: 0.4s;
+  -o-transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  -moz-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  -webkit-perspective: 1000;
+}*/
+
+/* line 19, ../sass/transitions.scss */
+/*.landing-translate-in .category-title,
+.landing-translate-in .category-arrow-container {
+  -moz-transform: translate3d(0, 40px, 0);
+  -ms-transform: translate3d(0, 40px, 0);
+  -webkit-transform: translate3d(0, 40px, 0);
+  transform: translate3d(0, 40px, 0);
+  -o-animation: translate-in 0.3s ease normal forwards;
+  -moz-animation: translate-in 0.3s ease normal forwards;
+  -webkit-animation: translate-in 0.3s ease normal forwards;
+  animation: translate-in 0.3s ease normal forwards;
+}*/
+/* line 25, ../sass/transitions.scss */
+/*.landing-translate-in .sub-categories {
+  -moz-transform: translate3d(0, 55px, 0);
+  -ms-transform: translate3d(0, 55px, 0);
+  -webkit-transform: translate3d(0, 55px, 0);
+  transform: translate3d(0, 55px, 0);
+  -o-animation: translate-in 0.3s ease normal forwards;
+  -moz-animation: translate-in 0.3s ease normal forwards;
+  -webkit-animation: translate-in 0.3s ease normal forwards;
+  animation: translate-in 0.3s ease normal forwards;
+}*/
+/* line 31, ../sass/transitions.scss */
+/*.landing-translate-in #main {
+  -moz-transform: translate3d(0, 85px, 0);
+  -ms-transform: translate3d(0, 85px, 0);
+  -webkit-transform: translate3d(0, 85px, 0);
+  transform: translate3d(0, 85px, 0);
+  -o-animation: translate-in 0.3s ease normal forwards;
+  -moz-animation: translate-in 0.3s ease normal forwards;
+  -webkit-animation: translate-in 0.3s ease normal forwards;
+  animation: translate-in 0.3s ease normal forwards;
+}
+*/
+/* line 39, ../sass/transitions.scss */
+/*.lander-loaded #lander-header,
+.lander-loaded .category-arrow-container,
+.lander-loaded #main,
+.lander-loaded .category-title {
+  opacity: 1;
+}*/
+
+/* line 50, ../sass/transitions.scss */
+/*.left-translate-in #lander-header,
+.left-translate-in .category-arrow-container,
+.left-translate-in .category-title,
+.left-translate-in #main,
+.left-translate-in #nav,
+.right-translate-in #lander-header,
+.right-translate-in .category-arrow-container,
+.right-translate-in .category-title,
+.right-translate-in #main,
+.right-translate-in #nav {
+  opacity: 1;
+}*/
+
+/* line 60, ../sass/transitions.scss */
+/*.left-translate-out .sub-categories,
+.left-translate-out .category-title,
+.right-translate-out .sub-categories,
+.right-translate-out .category-title {
+  opacity: 1;
+}
+*/
+/* line 69, ../sass/transitions.scss */
+/*.side-translate-base, .left-translate-out .category-title,
+.left-translate-out .sub-categories,
+.left-translate-out #main, .right-translate-out .category-title,
+.right-translate-out .sub-categories,
+.right-translate-out #main, .left-translate-in .category-title,
+.left-translate-in .sub-categories, .left-translate-in #main, .right-translate-in .category-title,
+.right-translate-in .sub-categories, .right-translate-in #main, .translate-out-down #main, .main-up-translate-in #main {
+  -moz-transition-property: opacity, -moz-transform;
+  -o-transition-property: opacity, -o-transform;
+  -webkit-transition-property: opacity, -webkit-transform;
+  transition-property: opacity, transform;
+}
+*/
+/* line 80, ../sass/transitions.scss */
+.left-translate-out #nav,
+.left-translate-out #lander-header {
+  opacity: 0;
+}
+/* line 84, ../sass/transitions.scss */
+.left-translate-out .category-title,
+.left-translate-out .sub-categories,
+.left-translate-out #main {
+  opacity: 0;
+}
+/* line 91, ../sass/transitions.scss */
+.left-translate-out .category-title,
+.left-translate-out .sub-categories {
+  -o-animation: translate-left 0.3s ease-in reverse forwards;
+  -moz-animation: translate-left 0.3s ease-in reverse forwards;
+  -webkit-animation: translate-left 0.3s ease-in reverse forwards;
+  animation: translate-left 0.3s ease-in reverse forwards;
+}
+/* line 96, ../sass/transitions.scss */
+.left-translate-out #main {
+  -o-animation: translate-left 0.3s ease-in reverse forwards;
+  -moz-animation: translate-left 0.3s ease-in reverse forwards;
+  -webkit-animation: translate-left 0.3s ease-in reverse forwards;
+  animation: translate-left 0.3s ease-in reverse forwards;
+}
+
+/* line 104, ../sass/transitions.scss */
+.right-translate-out #nav,
+.right-translate-out #lander-header {
+  opacity: 0;
+}
+/* line 113, ../sass/transitions.scss */
+.right-translate-out .category-title,
+.right-translate-out .sub-categories {
+  -o-animation: translate-right 0.3s ease-in reverse forwards;
+  -moz-animation: translate-right 0.3s ease-in reverse forwards;
+  -webkit-animation: translate-right 0.3s ease-in reverse forwards;
+  animation: translate-right 0.3s ease-in reverse forwards;
+}
+/* line 117, ../sass/transitions.scss */
+.right-translate-out #main {
+  -o-animation: translate-right 0.3s ease-in reverse forwards;
+  -moz-animation: translate-right 0.3s ease-in reverse forwards;
+  -webkit-animation: translate-right 0.3s ease-in reverse forwards;
+  animation: translate-right 0.3s ease-in reverse forwards;
+}
+
+/* line 126, ../sass/transitions.scss */
+/*.left-translate-in .category-title,
+.left-translate-in .sub-categories {
+  -o-animation: translate-left 0.3s ease-out normal forwards;
+  -moz-animation: translate-left 0.3s ease-out normal forwards;
+  -webkit-animation: translate-left 0.3s ease-out normal forwards;
+  animation: translate-left 0.3s ease-out normal forwards;
+}*/
+/* line 132, ../sass/transitions.scss */
+/*.left-translate-in #main {
+  -o-animation: translate-left 0.3s ease-out normal forwards;
+  -moz-animation: translate-left 0.3s ease-out normal forwards;
+  -webkit-animation: translate-left 0.3s ease-out normal forwards;
+  animation: translate-left 0.3s ease-out normal forwards;
+}*/
+
+/* line 139, ../sass/transitions.scss */
+/*.right-translate-in .category-title,
+.right-translate-in .sub-categories {
+  -o-animation: translate-right 0.3s ease-out normal forwards;
+  -moz-animation: translate-right 0.3s ease-out normal forwards;
+  -webkit-animation: translate-right 0.3s ease-out normal forwards;
+  animation: translate-right 0.3s ease-out normal forwards;
+}*/
+/* line 145, ../sass/transitions.scss */
+/*.right-translate-in #main {
+  -o-animation: translate-right 0.3s ease-out normal forwards;
+  -moz-animation: translate-right 0.3s ease-out normal forwards;
+  -webkit-animation: translate-right 0.3s ease-out normal forwards;
+  animation: translate-right 0.3s ease-out normal forwards;
+}*/
+
+/* line 157, ../sass/transitions.scss */
+.translate-out-down #lander-header,
+.translate-out-down #nav,
+.translate-out-down #main {
+  opacity: 0;
+}
+/* line 163, ../sass/transitions.scss */
+.translate-out-down #main {
+  -o-animation: translate-out-down 0.3s ease-out normal forwards;
+  -moz-animation: translate-out-down 0.3s ease-out normal forwards;
+  -webkit-animation: translate-out-down 0.3s ease-out normal forwards;
+  animation: translate-out-down 0.3s ease-out normal forwards;
+}
+
+/* line 175, ../sass/transitions.scss */
+/*.main-up-translate-in #main {
+  -o-animation: translate-in-up 0.3s ease-out normal forwards;
+  -moz-animation: translate-in-up 0.3s ease-out normal forwards;
+  -webkit-animation: translate-in-up 0.3s ease-out normal forwards;
+  animation: translate-in-up 0.3s ease-out normal forwards;
+}*/
+
+/* line 182, ../sass/transitions.scss */
+/*.main-up-translate-in #lander-header,
+.main-up-translate-in #nav {
+  opacity: 1;
+}*/
+
+@-webkit-keyframes fade-bg-to-full-opacity {
+  /* line 193, ../sass/transitions.scss */
+  from {
+    background-color: rgba(0, 0, 0, 0.03);
+  }
+
+  /* line 194, ../sass/transitions.scss */
+  to {
+    background-color: black;
+    color: #fff;
+  }
+}
+@-moz-keyframes fade-bg-to-full-opacity {
+  /* line 196, ../sass/transitions.scss */
+  from {
+    background-color: rgba(0, 0, 0, 0.03);
+  }
+
+  /* line 197, ../sass/transitions.scss */
+  to {
+    background-color: black;
+    color: #fff;
+  }
+}
+@keyframes fade-bg-to-full-opacity {
+  /* line 199, ../sass/transitions.scss */
+  from {
+    background-color: rgba(0, 0, 0, 0.03);
+  }
+
+  /* line 200, ../sass/transitions.scss */
+  to {
+    background-color: black;
+    color: #fff;
+  }
+}
+/* line 213, ../sass/transitions.scss */
+.translating-out-homepage-to-landing-page .homepage-nav {
+  opacity: 0;
+  overflow: hidden;
+}
+/* line 218, ../sass/transitions.scss */
+.translating-out-homepage-to-landing-page #lander-header {
+  opacity: 0;
+}
+/* line 221, ../sass/transitions.scss */
+.translating-out-homepage-to-landing-page h1 {
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  -webkit-transition-property: all;
+  transition-property: all;
+  -moz-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  width: 100%;
+  height: 28px;
+  margin-top: 0px;
+  margin-bottom: 40px;
+}
+/* line 229, ../sass/transitions.scss */
+.translating-out-homepage-to-landing-page h1 svg {
+  width: 131px;
+  height: 28px;
+  margin: 21px auto;
+}
+/* line 238, ../sass/transitions.scss */
+.translating-out-homepage-to-landing-page #nav, .translating-out-homepage-to-landing-page #main {
+  -o-animation: fade-out-1-to-0 0.25s ease-out normal forwards;
+  -moz-animation: fade-out-1-to-0 0.25s ease-out normal forwards;
+  -webkit-animation: fade-out-1-to-0 0.25s ease-out normal forwards;
+  animation: fade-out-1-to-0 0.25s ease-out normal forwards;
+}
+
+/* line 245, ../sass/transitions.scss */
+.from-home-translate-in #lander-header {
+  opacity: 1;
+}
+/* line 248, ../sass/transitions.scss */
+.from-home-translate-in #nav {
+  -o-animation: fade-in-0-to-1 0.25s ease-out normal forwards;
+  -moz-animation: fade-in-0-to-1 0.25s ease-out normal forwards;
+  -webkit-animation: fade-in-0-to-1 0.25s ease-out normal forwards;
+  animation: fade-in-0-to-1 0.25s ease-out normal forwards;
+}
+/* line 251, ../sass/transitions.scss */
+.from-home-translate-in #main {
+  -o-animation: fade-in-0-to-1-long 0.25s ease-out normal forwards;
+  -moz-animation: fade-in-0-to-1-long 0.25s ease-out normal forwards;
+  -webkit-animation: fade-in-0-to-1-long 0.25s ease-out normal forwards;
+  animation: fade-in-0-to-1-long 0.25s ease-out normal forwards;
+}
+
+/* line 257, ../sass/transitions.scss */
+/*@media (min-width: 800px) {
+.direct-translate-in #lander-header,
+.direct-translate-in #nav {
+  -o-animation: fade-in-0-to-1 0.5s ease-out normal forwards;
+  -moz-animation: fade-in-0-to-1 0.5s ease-out normal forwards;
+  -webkit-animation: fade-in-0-to-1 0.5s ease-out normal forwards;
+  animation: fade-in-0-to-1 0.5s ease-out normal forwards;
+}
+}*/
+/* line 261, ../sass/transitions.scss */
+/*@media (min-width: 800px) {
+.direct-translate-in #main {
+  -o-animation: fade-in-0-to-1-long 0.25s ease-out normal forwards;
+  -moz-animation: fade-in-0-to-1-long 0.25s ease-out normal forwards;
+  -webkit-animation: fade-in-0-to-1-long 0.25s ease-out normal forwards;
+  animation: fade-in-0-to-1-long 0.25s ease-out normal forwards;
+}
+}*/
+/* line 273, ../sass/transitions.scss */
+.translating-out-landing-page-to-homepage #lander-header {
+  opacity: 0;
+}
+/* line 276, ../sass/transitions.scss */
+.translating-out-landing-page-to-homepage h1 {
+  width: 50%;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  -webkit-transition-property: all;
+  transition-property: all;
+  -moz-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+}
+@media (min-width: 600px) {
+  /* line 276, ../sass/transitions.scss */
+  .translating-out-landing-page-to-homepage h1 {
+    opacity: 1;
+    width: 500px;
+    height: 100px;
+    margin: 55px auto 75px;
+  }
+}
+@media (min-width: 1024px) {
+  /* line 276, ../sass/transitions.scss */
+  .translating-out-landing-page-to-homepage h1 {
+    width: 700px;
+    height: 130px;
+    margin: 31px auto 75px;
+  }
+}
+/* line 311, ../sass/transitions.scss */
+.translating-out-landing-page-to-homepage #nav,
+.translating-out-landing-page-to-homepage #main {
+  -o-animation: fade-out-1-to-0 0.25s ease-out normal forwards;
+  -moz-animation: fade-out-1-to-0 0.25s ease-out normal forwards;
+  -webkit-animation: fade-out-1-to-0 0.25s ease-out normal forwards;
+  animation: fade-out-1-to-0 0.25s ease-out normal forwards;
+}
+
+/* line 318, ../sass/transitions.scss */
+.home-from-landing-page-translate-in #lander-header {
+  opacity: 1;
+}
+/* line 321, ../sass/transitions.scss */
+.home-from-landing-page-translate-in #nav {
+  -o-animation: fade-in-0-to-1 0.25s ease-out normal forwards;
+  -moz-animation: fade-in-0-to-1 0.25s ease-out normal forwards;
+  -webkit-animation: fade-in-0-to-1 0.25s ease-out normal forwards;
+  animation: fade-in-0-to-1 0.25s ease-out normal forwards;
+}
+/* line 324, ../sass/transitions.scss */
+.home-from-landing-page-translate-in #main {
+  -o-animation: fade-in-0-to-1-long 0.25s ease-out normal forwards;
+  -moz-animation: fade-in-0-to-1-long 0.25s ease-out normal forwards;
+  -webkit-animation: fade-in-0-to-1-long 0.25s ease-out normal forwards;
+  animation: fade-in-0-to-1-long 0.25s ease-out normal forwards;
+}
+
+@-webkit-keyframes fade-in-0-to-1 {
+  /* line 330, ../sass/transitions.scss */
+  from {
+    opacity: 0;
+    -moz-transform: translate3d(0, 25px, 0);
+    -ms-transform: translate3d(0, 25px, 0);
+    -webkit-transform: translate3d(0, 25px, 0);
+    transform: translate3d(0, 25px, 0);
+  }
+
+  /* line 331, ../sass/transitions.scss */
+  to {
+    opacity: 1;
+    -moz-transform: translate3d(0, 0px, 0);
+    -ms-transform: translate3d(0, 0px, 0);
+    -webkit-transform: translate3d(0, 0px, 0);
+    transform: translate3d(0, 0px, 0);
+  }
+}
+@-moz-keyframes fade-in-0-to-1 {
+  /* line 334, ../sass/transitions.scss */
+  from {
+    opacity: 0;
+    -moz-transform: translate3d(0, 25px, 0);
+    -ms-transform: translate3d(0, 25px, 0);
+    -webkit-transform: translate3d(0, 25px, 0);
+    transform: translate3d(0, 25px, 0);
+  }
+
+  /* line 335, ../sass/transitions.scss */
+  to {
+    opacity: 1;
+    -moz-transform: translate3d(0, 0px, 0);
+    -ms-transform: translate3d(0, 0px, 0);
+    -webkit-transform: translate3d(0, 0px, 0);
+    transform: translate3d(0, 0px, 0);
+  }
+}
+@keyframes fade-in-0-to-1 {
+  /* line 338, ../sass/transitions.scss */
+  from {
+    opacity: 0;
+    -moz-transform: translate3d(0, 25px, 0);
+    -ms-transform: translate3d(0, 25px, 0);
+    -webkit-transform: translate3d(0, 25px, 0);
+    transform: translate3d(0, 25px, 0);
+  }
+
+  /* line 339, ../sass/transitions.scss */
+  to {
+    opacity: 1;
+    -moz-transform: translate3d(0, 0px, 0);
+    -ms-transform: translate3d(0, 0px, 0);
+    -webkit-transform: translate3d(0, 0px, 0);
+    transform: translate3d(0, 0px, 0);
+  }
+}
+@-webkit-keyframes fade-in-0-to-1-long {
+  /* line 345, ../sass/transitions.scss */
+  from {
+    opacity: 0;
+    -moz-transform: translate3d(0, 50px, 0);
+    -ms-transform: translate3d(0, 50px, 0);
+    -webkit-transform: translate3d(0, 50px, 0);
+    transform: translate3d(0, 50px, 0);
+  }
+
+  /* line 346, ../sass/transitions.scss */
+  to {
+    opacity: 1;
+    -moz-transform: translate3d(0, 0px, 0);
+    -ms-transform: translate3d(0, 0px, 0);
+    -webkit-transform: translate3d(0, 0px, 0);
+    transform: translate3d(0, 0px, 0);
+  }
+}
+@-moz-keyframes fade-in-0-to-1-long {
+  /* line 349, ../sass/transitions.scss */
+  from {
+    opacity: 0;
+    -moz-transform: translate3d(0, 50px, 0);
+    -ms-transform: translate3d(0, 50px, 0);
+    -webkit-transform: translate3d(0, 50px, 0);
+    transform: translate3d(0, 50px, 0);
+  }
+
+  /* line 350, ../sass/transitions.scss */
+  to {
+    opacity: 1;
+    -moz-transform: translate3d(0, 0px, 0);
+    -ms-transform: translate3d(0, 0px, 0);
+    -webkit-transform: translate3d(0, 0px, 0);
+    transform: translate3d(0, 0px, 0);
+  }
+}
+@keyframes fade-in-0-to-1-long {
+  /* line 353, ../sass/transitions.scss */
+  from {
+    opacity: 0;
+    -moz-transform: translate3d(0, 50px, 0);
+    -ms-transform: translate3d(0, 50px, 0);
+    -webkit-transform: translate3d(0, 50px, 0);
+    transform: translate3d(0, 50px, 0);
+  }
+
+  /* line 354, ../sass/transitions.scss */
+  to {
+    opacity: 1;
+    -moz-transform: translate3d(0, 0px, 0);
+    -ms-transform: translate3d(0, 0px, 0);
+    -webkit-transform: translate3d(0, 0px, 0);
+    transform: translate3d(0, 0px, 0);
+  }
+}
+@-webkit-keyframes fade-out-1-to-0 {
+  /* line 358, ../sass/transitions.scss */
+  from {
+    opacity: 1;
+  }
+
+  /* line 359, ../sass/transitions.scss */
+  to {
+    opacity: 0;
+  }
+}
+@-moz-keyframes fade-out-1-to-0 {
+  /* line 362, ../sass/transitions.scss */
+  from {
+    opacity: 1;
+  }
+
+  /* line 363, ../sass/transitions.scss */
+  to {
+    opacity: 0;
+  }
+}
+@keyframes fade-out-1-to-0 {
+  /* line 366, ../sass/transitions.scss */
+  from {
+    opacity: 1;
+  }
+
+  /* line 367, ../sass/transitions.scss */
+  to {
+    opacity: 0;
+  }
+}
+/* line 375, ../sass/transitions.scss */
+.feed-transition #header,
+.feed-transition .latest-title,
+.feed-transition .daily-ribbon,
+.feed-transition #latest-scroller,
+.feed-transition .js-story:not(.translate-out) {
+  opacity: 0;
+  -moz-transition-property: opacity, -moz-transform;
+  -o-transition-property: opacity, -o-transform;
+  -webkit-transition-property: opacity, -webkit-transform;
+  transition-property: opacity, transform;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -moz-transition-timing-function: ease-in;
+  -o-transition-timing-function: ease-in;
+  -webkit-transition-timing-function: ease-in;
+  transition-timing-function: ease-in;
+  -moz-transform: translate3d(0, -25px, 0);
+  -ms-transform: translate3d(0, -25px, 0);
+  -webkit-transform: translate3d(0, -25px, 0);
+  transform: translate3d(0, -25px, 0);
+}
+/* line 387, ../sass/transitions.scss */
+.feed-transition .js-story:hover {
+  background-color: inherit;
+}
+
+/* line 393, ../sass/transitions.scss */
+.center {
+  float: left;
+  background: #fff;
+  z-index: 10;
+  -moz-transition-property: -moz-transform;
+  -o-transition-property: -o-transform;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: transform;
+  -moz-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -moz-transition-timing-function: ease;
+  -o-transition-timing-function: ease;
+  -webkit-transition-timing-function: ease;
+  transition-timing-function: ease;
+  -webkit-transform-origin: center center;
+  -moz-transform-origin: center center;
+  transform-origin: center center;
+  -o-animation: background-colour-switch 0.5s ease normal forwards;
+  -moz-animation: background-colour-switch 0.5s ease normal forwards;
+  -webkit-animation: background-colour-switch 0.5s ease normal forwards;
+  animation: background-colour-switch 0.5s ease normal forwards;
+}
+
+@-webkit-keyframes background-colour-switch {
+  /* line 408, ../sass/transitions.scss */
+  to {
+    background-color: #f1f1f1;
+  }
+}
+@-moz-keyframes background-colour-switch {
+  /* line 409, ../sass/transitions.scss */
+  to {
+    background-color: #f1f1f1;
+  }
+}
+@keyframes background-colour-switch {
+  /* line 410, ../sass/transitions.scss */
+  to {
+    background-color: #f1f1f1;
+  }
+}
+/* line 413, ../sass/transitions.scss */
+.translate-out {
+  -webkit-animation: translate-out 0.3s ease-in forwards;
+  -moz-animation: translate-out 0.3s ease-in forwards;
+  animation: translate-out 0.3s ease-in forwards;
+}
+
+/* line 426, ../sass/transitions.scss */
+.story-transition-next #main,
+.story-transition-next #header {
+  opacity: 0;
+  -moz-transition-property: opacity, -moz-transform;
+  -o-transition-property: opacity, -o-transform;
+  -webkit-transition-property: opacity, -webkit-transform;
+  transition-property: opacity, transform;
+  -moz-transition-duration: 0.25s, 0.3s;
+  -o-transition-duration: 0.25s, 0.3s;
+  -webkit-transition-duration: 0.25s, 0.3s;
+  transition-duration: 0.25s, 0.3s;
+  -moz-transition-timing-function: ease-out;
+  -o-transition-timing-function: ease-out;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+
+/* line 435, ../sass/transitions.scss */
+.footer-out {
+  -moz-transition-property: -moz-transform;
+  -o-transition-property: -o-transform;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: transform;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -moz-transition-timing-function: ease-in;
+  -o-transition-timing-function: ease-in;
+  -webkit-transition-timing-function: ease-in;
+  transition-timing-function: ease-in;
+}
+
+/* Article, Gallery, Daily, Video Translate-In */
+/* line 452, ../sass/transitions.scss */
+.story-translate-in #header, .feature-translate-in #header, .feature-from-feed-translate-in #header {
+  -o-animation: translate-in 0.3s ease-out normal forwards;
+  -moz-animation: translate-in 0.3s ease-out normal forwards;
+  -webkit-animation: translate-in 0.3s ease-out normal forwards;
+  animation: translate-in 0.3s ease-out normal forwards;
+}
+/* line 456, ../sass/transitions.scss */
+.story-translate-in .node-title, .feature-translate-in .node-title, .feature-from-feed-translate-in .node-title,
+.story-translate-in .daily-title,
+.feature-translate-in .daily-title,
+.feature-from-feed-translate-in .daily-title {
+  -moz-transform: translate3d(0, 40px, 0);
+  -ms-transform: translate3d(0, 40px, 0);
+  -webkit-transform: translate3d(0, 40px, 0);
+  transform: translate3d(0, 40px, 0);
+  -o-animation: translate-in 0.3s ease-out normal forwards;
+  -moz-animation: translate-in 0.3s ease-out normal forwards;
+  -webkit-animation: translate-in 0.3s ease-out normal forwards;
+  animation: translate-in 0.3s ease-out normal forwards;
+}
+/* line 462, ../sass/transitions.scss */
+.story-translate-in .byline, .feature-translate-in .byline, .feature-from-feed-translate-in .byline {
+  -moz-transform: translate3d(0, 55px, 0);
+  -ms-transform: translate3d(0, 55px, 0);
+  -webkit-transform: translate3d(0, 55px, 0);
+  transform: translate3d(0, 55px, 0);
+  -o-animation: translate-in-to-0196 0.3s ease-out normal forwards;
+  -moz-animation: translate-in-to-0196 0.3s ease-out normal forwards;
+  -webkit-animation: translate-in-to-0196 0.3s ease-out normal forwards;
+  animation: translate-in-to-0196 0.3s ease-out normal forwards;
+}
+/* line 467, ../sass/transitions.scss */
+.story-translate-in .daily-calendar, .feature-translate-in .daily-calendar, .feature-from-feed-translate-in .daily-calendar {
+  -moz-transform: translate3d(0, 55px, 0);
+  -ms-transform: translate3d(0, 55px, 0);
+  -webkit-transform: translate3d(0, 55px, 0);
+  transform: translate3d(0, 55px, 0);
+  -o-animation: translate-in 0.3s ease-out normal forwards;
+  -moz-animation: translate-in 0.3s ease-out normal forwards;
+  -webkit-animation: translate-in 0.3s ease-out normal forwards;
+  animation: translate-in 0.3s ease-out normal forwards;
+}
+/* line 472, ../sass/transitions.scss */
+.story-translate-in .commitment, .feature-translate-in .commitment, .feature-from-feed-translate-in .commitment,
+.story-translate-in .overlay-commitment,
+.feature-translate-in .overlay-commitment,
+.feature-from-feed-translate-in .overlay-commitment,
+.story-translate-in #share-reveal-hide-button,
+.feature-translate-in #share-reveal-hide-button,
+.feature-from-feed-translate-in #share-reveal-hide-button {
+  -moz-transform: translate3d(0, 70px, 0);
+  -ms-transform: translate3d(0, 70px, 0);
+  -webkit-transform: translate3d(0, 70px, 0);
+  transform: translate3d(0, 70px, 0);
+  -o-animation: translate-in-to-0196 0.3s ease-out normal forwards;
+  -moz-animation: translate-in-to-0196 0.3s ease-out normal forwards;
+  -webkit-animation: translate-in-to-0196 0.3s ease-out normal forwards;
+  animation: translate-in-to-0196 0.3s ease-out normal forwards;
+}
+/* line 479, ../sass/transitions.scss */
+.story-translate-in #editorial-body, .feature-translate-in #editorial-body, .feature-from-feed-translate-in #editorial-body,
+.story-translate-in .daily-node-image,
+.feature-translate-in .daily-node-image,
+.feature-from-feed-translate-in .daily-node-image {
+  -moz-transform: translate3d(0, 85px, 0);
+  -ms-transform: translate3d(0, 85px, 0);
+  -webkit-transform: translate3d(0, 85px, 0);
+  transform: translate3d(0, 85px, 0);
+  -o-animation: translate-in 0.4s ease-out normal forwards;
+  -moz-animation: translate-in 0.4s ease-out normal forwards;
+  -webkit-animation: translate-in 0.4s ease-out normal forwards;
+  animation: translate-in 0.4s ease-out normal forwards;
+}
+/* line 486, ../sass/transitions.scss */
+.story-translate-in #gallery-slider-overlay, .feature-translate-in #gallery-slider-overlay, .feature-from-feed-translate-in #gallery-slider-overlay {
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: -moz-linear-gradient(left, rgba(50, 50, 50, 0.8) 0%, #323232 20%, #323232 100%);
+  background-image: -webkit-linear-gradient(left, rgba(50, 50, 50, 0.8) 0%, #323232 20%, #323232 100%);
+  background-image: linear-gradient(to right, rgba(50, 50, 50, 0.8) 0%, #323232 20%, #323232 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00323232', endColorstr='#323232',GradientType=1 );
+  -o-animation: gallery-slide-overlay 0.5s ease normal forwards;
+  -moz-animation: gallery-slide-overlay 0.5s ease normal forwards;
+  -webkit-animation: gallery-slide-overlay 0.5s ease normal forwards;
+  animation: gallery-slide-overlay 0.5s ease normal forwards;
+}
+/* line 511, ../sass/transitions.scss */
+.story-translate-in #footer .next-up, .feature-translate-in #footer .next-up, .feature-from-feed-translate-in #footer .next-up {
+  opacity: 0;
+  -moz-transform: translate3d(0, 25px, 0);
+  -ms-transform: translate3d(0, 25px, 0);
+  -webkit-transform: translate3d(0, 25px, 0);
+  transform: translate3d(0, 25px, 0);
+  -o-animation: translate-in-to-05 0.5s ease-out normal forwards;
+  -moz-animation: translate-in-to-05 0.5s ease-out normal forwards;
+  -webkit-animation: translate-in-to-05 0.5s ease-out normal forwards;
+  animation: translate-in-to-05 0.5s ease-out normal forwards;
+  -o-animation-delay: 1s;
+  -moz-animation-delay: 1s;
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+}
+/* line 517, ../sass/transitions.scss */
+.story-translate-in #footer .footer-bottom, .feature-translate-in #footer .footer-bottom, .feature-from-feed-translate-in #footer .footer-bottom {
+  opacity: 0;
+  -moz-transform: translate3d(0, 25px, 0);
+  -ms-transform: translate3d(0, 25px, 0);
+  -webkit-transform: translate3d(0, 25px, 0);
+  transform: translate3d(0, 25px, 0);
+  -o-animation: translate-in 0.5s ease-out normal forwards;
+  -moz-animation: translate-in 0.5s ease-out normal forwards;
+  -webkit-animation: translate-in 0.5s ease-out normal forwards;
+  animation: translate-in 0.5s ease-out normal forwards;
+  -o-animation-delay: 1.2s;
+  -moz-animation-delay: 1.2s;
+  -webkit-animation-delay: 1.2s;
+  animation-delay: 1.2s;
+}
+
+/* line 532, ../sass/transitions.scss */
+.feature-translate-in #cover {
+  opacity: 1;
+}
+/* line 536, ../sass/transitions.scss */
+.feature-translate-in #cover .overlay {
+  -o-animation: feature-overlay-fade-in 3s ease normal forwards;
+  -moz-animation: feature-overlay-fade-in 3s ease normal forwards;
+  -webkit-animation: feature-overlay-fade-in 3s ease normal forwards;
+  animation: feature-overlay-fade-in 3s ease normal forwards;
+  -o-animation-delay: 0.3s;
+  -moz-animation-delay: 0.3s;
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+}
+/* line 541, ../sass/transitions.scss */
+.feature-translate-in #feature-header {
+  -o-animation: translate-in 0.5s ease normal forwards;
+  -moz-animation: translate-in 0.5s ease normal forwards;
+  -webkit-animation: translate-in 0.5s ease normal forwards;
+  animation: translate-in 0.5s ease normal forwards;
+  -o-animation-delay: 0.3s;
+  -moz-animation-delay: 0.3s;
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+}
+/* line 546, ../sass/transitions.scss */
+.feature-translate-in #cover-scroller {
+  -o-animation: opacity-in 3.5s ease normal forwards;
+  -moz-animation: opacity-in 3.5s ease normal forwards;
+  -webkit-animation: opacity-in 3.5s ease normal forwards;
+  animation: opacity-in 3.5s ease normal forwards;
+  -o-animation-delay: 0.3s;
+  -moz-animation-delay: 0.3s;
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+}
+/* line 551, ../sass/transitions.scss */
+.feature-translate-in .feature-story-commitment,
+.feature-translate-in .feature-share-buttons {
+  -o-animation: translate-in 0.5s ease normal forwards;
+  -moz-animation: translate-in 0.5s ease normal forwards;
+  -webkit-animation: translate-in 0.5s ease normal forwards;
+  animation: translate-in 0.5s ease normal forwards;
+  -o-animation-delay: 0.7s;
+  -moz-animation-delay: 0.7s;
+  -webkit-animation-delay: 0.7s;
+  animation-delay: 0.7s;
+}
+
+/* line 561, ../sass/transitions.scss */
+.feature-from-feed-translate-in #cover {
+  opacity: 1;
+}
+/* line 564, ../sass/transitions.scss */
+.feature-from-feed-translate-in #cover .overlay {
+  opacity: 0.3;
+}
+/* line 568, ../sass/transitions.scss */
+.feature-from-feed-translate-in #feature-header {
+  -o-animation: translate-in 0.5s ease normal forwards;
+  -moz-animation: translate-in 0.5s ease normal forwards;
+  -webkit-animation: translate-in 0.5s ease normal forwards;
+  animation: translate-in 0.5s ease normal forwards;
+  -o-animation-delay: 0.3s;
+  -moz-animation-delay: 0.3s;
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+}
+/* line 573, ../sass/transitions.scss */
+.feature-from-feed-translate-in #cover-scroller {
+  -o-animation: opacity-in 3.5s ease normal forwards;
+  -moz-animation: opacity-in 3.5s ease normal forwards;
+  -webkit-animation: opacity-in 3.5s ease normal forwards;
+  animation: opacity-in 3.5s ease normal forwards;
+  -o-animation-delay: 0.3s;
+  -moz-animation-delay: 0.3s;
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+}
+@media (min-width: 600px) {
+  /* line 578, ../sass/transitions.scss */
+  .feature-from-feed-translate-in .feature-story-commitment,
+  .feature-from-feed-translate-in .feature-share-buttons {
+    -o-animation: translate-in 0.5s ease normal forwards;
+    -moz-animation: translate-in 0.5s ease normal forwards;
+    -webkit-animation: translate-in 0.5s ease normal forwards;
+    animation: translate-in 0.5s ease normal forwards;
+    -o-animation-delay: 0.7s;
+    -moz-animation-delay: 0.7s;
+    -webkit-animation-delay: 0.7s;
+    animation-delay: 0.7s;
+  }
+}
+
+/* line 588, ../sass/transitions.scss */
+.feature-utilities.slide-up {
+  -ms-transform: translateY(-100%);
+  -webkit-transform: translateY(-100%);
+  transform: translateY(-100%);
+}
+
+/* line 599, ../sass/transitions.scss */
+.feature-share-buttons {
+  display: block;
+  margin-bottom: 47px;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  -moz-transform: translate3d(0, 25px, 0);
+  -ms-transform: translate3d(0, 25px, 0);
+  -webkit-transform: translate3d(0, 25px, 0);
+  transform: translate3d(0, 25px, 0);
+}
+@media (min-width: 600px) {
+  /* line 599, ../sass/transitions.scss */
+  .feature-share-buttons {
+    margin-bottom: 22px;
+    float: right;
+    text-align: right;
+  }
+}
+@media (min-width: 1024px) {
+  /* line 599, ../sass/transitions.scss */
+  .feature-share-buttons {
+    margin-right: 8.54271%;
+  }
+}
+/* line 618, ../sass/transitions.scss */
+.feature-share-buttons .share-button {
+  opacity: 1;
+  cursor: pointer;
+  height: 23px;
+  border: 0;
+  padding-right: 20px;
+}
+/* line 624, ../sass/transitions.scss */
+.feature-share-buttons .share-button:last-child {
+  padding-right: 0;
+}
+/* line 628, ../sass/transitions.scss */
+.feature-share-buttons .share-button a img {
+  padding-top: 0;
+}
+/* line 633, ../sass/transitions.scss */
+.feature-share-buttons .share-button-a {
+  display: block;
+}
+/* line 642, ../sass/transitions.scss */
+.feature-share-buttons .twitter .share-image {
+  padding-right: 0;
+}
+
+/* line 648, ../sass/transitions.scss */
+.feature-social {
+  display: none;
+}
+/* line 652, ../sass/transitions.scss */
+.feature-social .share-button {
+  opacity: 1;
+}
+/* line 656, ../sass/transitions.scss */
+.feature-social .item {
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 20px;
+}
+/* line 662, ../sass/transitions.scss */
+.feature-social .item .share-button-f {
+  cursor: pointer;
+}
+/* line 666, ../sass/transitions.scss */
+.feature-social .item:last-child {
+  margin-right: 0px;
+}
+/* line 673, ../sass/transitions.scss */
+.feature-social .ellipsis {
+  width: 22px;
+  height: 4px;
+}
+
+/* Feature Translate-OUT */
+/* line 713, ../sass/transitions.scss */
+.section-subscribe #header {
+  -o-animation: translate-in 0.3s ease-out normal forwards;
+  -moz-animation: translate-in 0.3s ease-out normal forwards;
+  -webkit-animation: translate-in 0.3s ease-out normal forwards;
+  animation: translate-in 0.3s ease-out normal forwards;
+}
+/* line 717, ../sass/transitions.scss */
+.section-subscribe .subscribe-feature-first {
+  -moz-transform: translate3d(0, 40px, 0);
+  -ms-transform: translate3d(0, 40px, 0);
+  -webkit-transform: translate3d(0, 40px, 0);
+  transform: translate3d(0, 40px, 0);
+  -o-animation: translate-in 0.3s ease-out normal forwards;
+  -moz-animation: translate-in 0.3s ease-out normal forwards;
+  -webkit-animation: translate-in 0.3s ease-out normal forwards;
+  animation: translate-in 0.3s ease-out normal forwards;
+}
+/* line 722, ../sass/transitions.scss */
+.section-subscribe .subscribe-format-heading {
+  -moz-transform: translate3d(0, 55px, 0);
+  -ms-transform: translate3d(0, 55px, 0);
+  -webkit-transform: translate3d(0, 55px, 0);
+  transform: translate3d(0, 55px, 0);
+  -o-animation: translate-in 0.3s ease-out normal forwards;
+  -moz-animation: translate-in 0.3s ease-out normal forwards;
+  -webkit-animation: translate-in 0.3s ease-out normal forwards;
+  animation: translate-in 0.3s ease-out normal forwards;
+}
+/* line 727, ../sass/transitions.scss */
+.section-subscribe .subscribe-format-description {
+  -moz-transform: translate3d(0, 70px, 0);
+  -ms-transform: translate3d(0, 70px, 0);
+  -webkit-transform: translate3d(0, 70px, 0);
+  transform: translate3d(0, 70px, 0);
+  -o-animation: translate-in 0.3s ease-out normal forwards;
+  -moz-animation: translate-in 0.3s ease-out normal forwards;
+  -webkit-animation: translate-in 0.3s ease-out normal forwards;
+  animation: translate-in 0.3s ease-out normal forwards;
+}
+/* line 732, ../sass/transitions.scss */
+.section-subscribe .subscribe-abridged {
+  -moz-transform: translate3d(0, 85px, 0);
+  -ms-transform: translate3d(0, 85px, 0);
+  -webkit-transform: translate3d(0, 85px, 0);
+  transform: translate3d(0, 85px, 0);
+  -o-animation: translate-in 0.4s ease-out normal forwards;
+  -moz-animation: translate-in 0.4s ease-out normal forwards;
+  -webkit-animation: translate-in 0.4s ease-out normal forwards;
+  animation: translate-in 0.4s ease-out normal forwards;
+}
+
+/* line 741, ../sass/transitions.scss */
+.section-magazine #header {
+  -o-animation: translate-in 0.3s ease-out normal forwards;
+  -moz-animation: translate-in 0.3s ease-out normal forwards;
+  -webkit-animation: translate-in 0.3s ease-out normal forwards;
+  animation: translate-in 0.3s ease-out normal forwards;
+}
+/* line 745, ../sass/transitions.scss */
+.section-magazine .about-navigation .sub-categories {
+  -moz-transform: translate3d(0, 40px, 0);
+  -ms-transform: translate3d(0, 40px, 0);
+  -webkit-transform: translate3d(0, 40px, 0);
+  transform: translate3d(0, 40px, 0);
+  -o-animation: translate-in 0.3s ease-out normal forwards;
+  -moz-animation: translate-in 0.3s ease-out normal forwards;
+  -webkit-animation: translate-in 0.3s ease-out normal forwards;
+  animation: translate-in 0.3s ease-out normal forwards;
+}
+/* line 750, ../sass/transitions.scss */
+.section-magazine .about-page {
+  -moz-transform: translate3d(0, 85px, 0);
+  -ms-transform: translate3d(0, 85px, 0);
+  -webkit-transform: translate3d(0, 85px, 0);
+  transform: translate3d(0, 85px, 0);
+  -o-animation: translate-in 0.4s ease-out normal forwards;
+  -moz-animation: translate-in 0.4s ease-out normal forwards;
+  -webkit-animation: translate-in 0.4s ease-out normal forwards;
+  animation: translate-in 0.4s ease-out normal forwards;
+}
+
+/* line 763, ../sass/transitions.scss */
+.slide-slide {
+  -webkit-animation: slide-slide 0.3s ease forwards;
+  -moz-animation: slide-slide 0.3s ease forwards;
+  animation: slide-slide 0.3s ease forwards;
+}
+
+/* line 773, ../sass/transitions.scss */
+#drawer-breadcrumb {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  -webkit-transform: rotate(270deg);
+  transform: rotate(270deg);
+  -moz-transition-property: opacity, bottom;
+  -o-transition-property: opacity, bottom;
+  -webkit-transition-property: opacity, bottom;
+  transition-property: opacity, bottom;
+  -moz-transition-duration: 0.5s, 0.5s;
+  -o-transition-duration: 0.5s, 0.5s;
+  -webkit-transition-duration: 0.5s, 0.5s;
+  transition-duration: 0.5s, 0.5s;
+  -moz-transition-timing-function: ease, ease;
+  -o-transition-timing-function: ease, ease;
+  -webkit-transition-timing-function: ease, ease;
+  transition-timing-function: ease, ease;
+  opacity: 0;
+  display: block;
+  font-size: 15px;
+  position: absolute;
+  bottom: -15px;
+  text-transform: uppercase;
+  -webkit-transform-origin: left;
+  -moz-transform-origin: left;
+  -ms-transform-origin: left;
+  -o-transform-origin: left;
+  transform-origin: left;
+}
+/* line 792, ../sass/transitions.scss */
+#drawer-breadcrumb.showing {
+  opacity: 1;
+  bottom: 15px;
+}
+/* line 796, ../sass/transitions.scss */
+#drawer-breadcrumb.showing.bottom-move-out {
+  bottom: 45px;
+  opacity: 0;
+}
+
+/* line 805, ../sass/transitions.scss */
+#bread-cat a,
+#bread-subcat a {
+  color: #666;
+  font-weight: 400;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  padding-right: 20px;
+  margin-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-right: 1px solid #333;
+}
+/* line 816, ../sass/transitions.scss */
+#bread-cat a:hover,
+#bread-subcat a:hover {
+  color: white;
+}
+
+@-webkit-keyframes feature-overlay-fade-in {
+  /* line 833, ../sass/transitions.scss */
+  to {
+    opacity: 0.3;
+    background: #000;
+  }
+}
+@-moz-keyframes feature-overlay-fade-in {
+  /* line 834, ../sass/transitions.scss */
+  to {
+    opacity: 0.3;
+    background: #000;
+  }
+}
+@keyframes feature-overlay-fade-in {
+  /* line 835, ../sass/transitions.scss */
+  to {
+    opacity: 0.3;
+    background: #000;
+  }
+}
+@-webkit-keyframes opacity-in {
+  /* line 839, ../sass/transitions.scss */
+  to {
+    opacity: 1;
+  }
+}
+@-moz-keyframes opacity-in {
+  /* line 840, ../sass/transitions.scss */
+  to {
+    opacity: 1;
+  }
+}
+@keyframes opacity-in {
+  /* line 841, ../sass/transitions.scss */
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes translate-in-to-0196 {
+  /* line 849, ../sass/transitions.scss */
+  to {
+    opacity: 0.196;
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@-moz-keyframes translate-in-to-0196 {
+  /* line 850, ../sass/transitions.scss */
+  to {
+    opacity: 0.196;
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes translate-in-to-0196 {
+  /* line 851, ../sass/transitions.scss */
+  to {
+    opacity: 0.196;
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@-webkit-keyframes translate-in-to-05 {
+  /* line 854, ../sass/transitions.scss */
+  to {
+    opacity: 0.5;
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@-moz-keyframes translate-in-to-05 {
+  /* line 855, ../sass/transitions.scss */
+  to {
+    opacity: 0.5;
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes translate-in-to-05 {
+  /* line 856, ../sass/transitions.scss */
+  to {
+    opacity: 0.5;
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@-webkit-keyframes translate-in {
+  /* line 865, ../sass/transitions.scss */
+  to {
+    opacity: 1;
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@-moz-keyframes translate-in {
+  /* line 866, ../sass/transitions.scss */
+  to {
+    opacity: 1;
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes translate-in {
+  /* line 867, ../sass/transitions.scss */
+  to {
+    opacity: 1;
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@-webkit-keyframes translate-in-up {
+  /* line 873, ../sass/transitions.scss */
+  from {
+    opacity: 0;
+    -moz-transform: transform3d(0, 25px, 0);
+    -ms-transform: transform3d(0, 25px, 0);
+    -webkit-transform: transform3d(0, 25px, 0);
+    transform: transform3d(0, 25px, 0);
+  }
+
+  /* line 874, ../sass/transitions.scss */
+  to {
+    opacity: 1;
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@-moz-keyframes translate-in-up {
+  /* line 876, ../sass/transitions.scss */
+  from {
+    opacity: 0;
+    -moz-transform: translate3d(0, 25px, 0);
+    -ms-transform: translate3d(0, 25px, 0);
+    -webkit-transform: translate3d(0, 25px, 0);
+    transform: translate3d(0, 25px, 0);
+  }
+
+  /* line 877, ../sass/transitions.scss */
+  to {
+    opacity: 1;
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes translate-in-up {
+  /* line 879, ../sass/transitions.scss */
+  from {
+    opacity: 0;
+    -moz-transform: translate3d(0, 25px, 0);
+    -ms-transform: translate3d(0, 25px, 0);
+    -webkit-transform: translate3d(0, 25px, 0);
+    transform: translate3d(0, 25px, 0);
+  }
+
+  /* line 880, ../sass/transitions.scss */
+  to {
+    opacity: 1;
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@-webkit-keyframes translate-out {
+  /* line 885, ../sass/transitions.scss */
+  to {
+    opacity: 0;
+    -moz-transform: translate3d(0, -50px, 0);
+    -ms-transform: translate3d(0, -50px, 0);
+    -webkit-transform: translate3d(0, -50px, 0);
+    transform: translate3d(0, -50px, 0);
+  }
+}
+@-moz-keyframes translate-out {
+  /* line 886, ../sass/transitions.scss */
+  to {
+    opacity: 0;
+    -moz-transform: translate3d(0, -50px, 0);
+    -ms-transform: translate3d(0, -50px, 0);
+    -webkit-transform: translate3d(0, -50px, 0);
+    transform: translate3d(0, -50px, 0);
+  }
+}
+@keyframes translate-out {
+  /* line 887, ../sass/transitions.scss */
+  to {
+    opacity: 0;
+    -moz-transform: translate3d(0, -50px, 0);
+    -ms-transform: translate3d(0, -50px, 0);
+    -webkit-transform: translate3d(0, -50px, 0);
+    transform: translate3d(0, -50px, 0);
+  }
+}
+@-webkit-keyframes translate-out-down {
+  /* line 893, ../sass/transitions.scss */
+  from {
+    opacity: 1;
+    -moz-transform: transform3d(0, 0, 0);
+    -ms-transform: transform3d(0, 0, 0);
+    -webkit-transform: transform3d(0, 0, 0);
+    transform: transform3d(0, 0, 0);
+  }
+
+  /* line 894, ../sass/transitions.scss */
+  to {
+    opacity: 0;
+    -moz-transform: transform3d(0, 25px, 0);
+    -ms-transform: transform3d(0, 25px, 0);
+    -webkit-transform: transform3d(0, 25px, 0);
+    transform: transform3d(0, 25px, 0);
+  }
+}
+@-moz-keyframes translate-out-down {
+  /* line 896, ../sass/transitions.scss */
+  from {
+    opacity: 1;
+    -moz-transform: transform3d(0, 0, 0);
+    -ms-transform: transform3d(0, 0, 0);
+    -webkit-transform: transform3d(0, 0, 0);
+    transform: transform3d(0, 0, 0);
+  }
+
+  /* line 897, ../sass/transitions.scss */
+  to {
+    opacity: 0;
+    -moz-transform: transform3d(0, 25px, 0);
+    -ms-transform: transform3d(0, 25px, 0);
+    -webkit-transform: transform3d(0, 25px, 0);
+    transform: transform3d(0, 25px, 0);
+  }
+}
+@keyframes translate-out-down {
+  /* line 899, ../sass/transitions.scss */
+  from {
+    opacity: 1;
+    -moz-transform: transform3d(0, 0, 0);
+    -ms-transform: transform3d(0, 0, 0);
+    -webkit-transform: transform3d(0, 0, 0);
+    transform: transform3d(0, 0, 0);
+  }
+
+  /* line 900, ../sass/transitions.scss */
+  to {
+    opacity: 0;
+    -moz-transform: transform3d(0, 25px, 0);
+    -ms-transform: transform3d(0, 25px, 0);
+    -webkit-transform: transform3d(0, 25px, 0);
+    transform: transform3d(0, 25px, 0);
+  }
+}
+@-webkit-keyframes translate-left {
+  /* line 912, ../sass/transitions.scss */
+  from {
+    opacity: 0;
+    -moz-transform: translate3d(-25px, 0, 0);
+    -ms-transform: translate3d(-25px, 0, 0);
+    -webkit-transform: translate3d(-25px, 0, 0);
+    transform: translate3d(-25px, 0, 0);
+  }
+
+  /* line 913, ../sass/transitions.scss */
+  to {
+    opacity: 1;
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@-moz-keyframes translate-left {
+  /* line 915, ../sass/transitions.scss */
+  from {
+    opacity: 0;
+    -moz-transform: translate3d(-25px, 0, 0);
+    -ms-transform: translate3d(-25px, 0, 0);
+    -webkit-transform: translate3d(-25px, 0, 0);
+    transform: translate3d(-25px, 0, 0);
+  }
+
+  /* line 916, ../sass/transitions.scss */
+  to {
+    opacity: 1;
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes translate-left {
+  /* line 918, ../sass/transitions.scss */
+  from {
+    opacity: 0;
+    -moz-transform: translate3d(-25px, 0, 0);
+    -ms-transform: translate3d(-25px, 0, 0);
+    -webkit-transform: translate3d(-25px, 0, 0);
+    transform: translate3d(-25px, 0, 0);
+  }
+
+  /* line 919, ../sass/transitions.scss */
+  to {
+    opacity: 1;
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@-webkit-keyframes translate-right {
+  /* line 927, ../sass/transitions.scss */
+  from {
+    opacity: 0;
+    -moz-transform: translate3d(25px, 0, 0);
+    -ms-transform: translate3d(25px, 0, 0);
+    -webkit-transform: translate3d(25px, 0, 0);
+    transform: translate3d(25px, 0, 0);
+  }
+
+  /* line 928, ../sass/transitions.scss */
+  to {
+    opacity: 1;
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@-moz-keyframes translate-right {
+  /* line 931, ../sass/transitions.scss */
+  from {
+    opacity: 0;
+    -moz-transform: translate3d(25px, 0, 0);
+    -ms-transform: translate3d(25px, 0, 0);
+    -webkit-transform: translate3d(25px, 0, 0);
+    transform: translate3d(25px, 0, 0);
+  }
+
+  /* line 932, ../sass/transitions.scss */
+  to {
+    opacity: 1;
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes translate-right {
+  /* line 935, ../sass/transitions.scss */
+  from {
+    opacity: 0;
+    -moz-transform: translate3d(25px, 0, 0);
+    -ms-transform: translate3d(25px, 0, 0);
+    -webkit-transform: translate3d(25px, 0, 0);
+    transform: translate3d(25px, 0, 0);
+  }
+
+  /* line 936, ../sass/transitions.scss */
+  to {
+    opacity: 1;
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@-webkit-keyframes slide-slide {
+  /* line 950, ../sass/transitions.scss */
+  to {
+    opacity: 1;
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@-moz-keyframes slide-slide {
+  /* line 951, ../sass/transitions.scss */
+  to {
+    opacity: 1;
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes slide-slide {
+  /* line 952, ../sass/transitions.scss */
+  to {
+    opacity: 1;
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@-webkit-keyframes gallery-slide-overlay {
+  /* line 957, ../sass/transitions.scss */
+  to {
+    opacity: 0;
+    z-index: -1;
+  }
+}
+@-moz-keyframes gallery-slide-overlay {
+  /* line 958, ../sass/transitions.scss */
+  to {
+    opacity: 0;
+    z-index: -1;
+  }
+}
+@keyframes gallery-slide-overlay {
+  /* line 959, ../sass/transitions.scss */
+  to {
+    opacity: 0;
+    z-index: -1;
+  }
+}
